@@ -118,8 +118,15 @@ namespace ScratchPad
                 Console.WriteLine(numberToCountTo);
             }
         }
+
+        public static void ReverseTheListOfNumbers()
+        {
+            Console.WriteLine("Enter 5 numbers and I'll print them in reverse order");
+
+
+        }
         
-        // Couldn't figure out
+        // Couldn't figure out. Keep getting out of index range error. 
         public static void FindingTheSmallestNumber()
         {
             Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
