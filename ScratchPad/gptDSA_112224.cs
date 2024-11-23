@@ -96,7 +96,7 @@ namespace ScratchPad
 
             int letterCount = 0;
 
-            for(int i = 0; i <= word.Length; i++) 
+            for(int i = 0; i < word.Length; i++) 
             {
                 if (word[i] == referenceLetter)
                 {
@@ -104,7 +104,7 @@ namespace ScratchPad
                 }
             }
 
-            Console.WriteLine($"The letter {referenceLetter} appears in the word, {word}, {letterCount} amount of times.");
+            Console.WriteLine($"The letter {referenceLetter.ToString().ToUpper()} appears in the word, {word}, {letterCount} amount of times.");
 
         }
     }
