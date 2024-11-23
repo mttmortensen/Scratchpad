@@ -89,13 +89,15 @@ namespace ScratchPad
 
         public static void CountdownFrom10()
         {
-            Console.WriteLine("Let's countdown from 10..");
+            Console.WriteLine("Let's countdown from....");
 
-            for (int i = 9; i > 0; i--)
+            for (int i = 10; i > 0; i--)
             {
                 Console.WriteLine(i);
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
             }
+
+            Console.WriteLine(":) Press a key to exit...");
         }
         
         // Couldn't figure out
