@@ -62,6 +62,7 @@ namespace ScratchPad
             Console.WriteLine($"The factorial for your number is {total}");
         }
 
+        // Couldn't figure out
         public static void FindingTheSmallestNumber()
         {
             Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
@@ -78,11 +79,12 @@ namespace ScratchPad
                 {
                     smallestNumber = numbers[i];
                 }
-
-                
             }
-
             Console.WriteLine(smallestNumber);
+        }
+
+        public static void HowManyTimesDoesTheLetterAppear()
+        {
 
         }
     }
