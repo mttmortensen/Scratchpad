@@ -64,7 +64,17 @@ namespace ScratchPad
 
         public static void FindingTheSmallestNumber()
         {
+            Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
 
+            int[] numbers = new int[5];
+            int smallestNumber = 0;
+
+            for (int i = 0;  i <= numbers.Length; i++)
+            {
+                numbers.Append(int.Parse(Console.ReadLine()));
+            }
+
+            
         }
     }
 }
