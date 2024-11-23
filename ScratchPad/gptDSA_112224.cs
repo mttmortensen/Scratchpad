@@ -109,6 +109,12 @@ namespace ScratchPad
             for (int i = 1; i <= numberToCountTo; i += 2)
             {
                 Console.WriteLine(i);
+                
+                // This should handle displaying the last number if it ends in an even number
+                if (numberToCountTo % 2 == 0)
+                {
+                    Console.WriteLine(numberToCountTo);
+                }
             }
         }
         
