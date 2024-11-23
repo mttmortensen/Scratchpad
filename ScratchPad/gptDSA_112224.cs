@@ -132,19 +132,18 @@ namespace ScratchPad
             Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
 
             int[] numbers = new int[5];
-            int smallestNumber = 0;
-            int currentNumber = 0;
+            int smallestNumber = int.MaxValue;
 
-            for (int i = 1;  i <= numbers.Length; i++)
+            for (int i = 0;  i < numbers.Length; i++)
             {
                 numbers[i] = int.Parse(Console.ReadLine());
 
-                if (numbers[i] > smallestNumber )
+                if (numbers[i] < smallestNumber )
                 {
                     smallestNumber = numbers[i];
                 }
             }
-            Console.WriteLine(smallestNumber);
+            Console.WriteLine($"The smallest number out of your list is {smallestNumber}");
         }
     }
 }
