@@ -111,7 +111,8 @@ namespace ScratchPad
                 Console.WriteLine(i);
                 
             }
-
+            // This will handle the last number being even but it's messes up the last two numbers
+            // Not sure if I should then decide to start from 1 or 2 based on this numberToCountTo
             if (numberToCountTo % 2 == 0)
             {
                 Console.WriteLine(numberToCountTo);
