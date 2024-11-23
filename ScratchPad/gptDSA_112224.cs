@@ -85,6 +85,15 @@ namespace ScratchPad
 
         public static void HowManyTimesDoesTheLetterAppear()
         {
+            Console.WriteLine("Let's see how many times a letter comes up.");
+            Console.WriteLine("Enter a letter as reference (EX: 'c'):");
+
+            char referenceLetter = char.Parse(Console.ReadLine().ToLower());
+
+            Console.WriteLine("Enter the word to search against (EX: 'cat')");
+
+            string word = Console.ReadLine();
+
 
         }
     }
