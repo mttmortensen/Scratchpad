@@ -104,7 +104,12 @@ namespace ScratchPad
         {
             Console.WriteLine("Enter a number and I'll print out every other number leading up to it: "); 
 
+            int numberToCountTo = int.Parse(Console.ReadLine());
 
+            for (int i = 1; i <= numberToCountTo; i += 2)
+            {
+                Console.WriteLine(i);
+            }
         }
         
         // Couldn't figure out

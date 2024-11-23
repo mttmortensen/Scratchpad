@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptDSA_112224.CountdownFrom10();
+        gptDSA_112224.PrintingOutEveryOtherNumber();
         
         Console.ReadLine();
     }
