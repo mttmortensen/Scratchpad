@@ -62,6 +62,25 @@ namespace ScratchPad
             Console.WriteLine($"The factorial for your number is {total}");
         }
 
+        public static void FindingTheSmallestNumber()
+        {
+            Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
+
+            int[] numbers = new int[5];
+            int smallestNumber = int.MaxValue;
+
+            for (int i = 0;  i < numbers.Length; i++)
+            {
+                numbers[i] = int.Parse(Console.ReadLine());
+
+                if (numbers[i] < smallestNumber )
+                {
+                    smallestNumber = numbers[i];
+                }
+            }
+            Console.WriteLine($"The smallest number out of your list is {smallestNumber}");
+        }
+        
         public static void HowManyTimesDoesTheLetterAppear()
         {
             Console.WriteLine("Let's see how many times a letter comes up.");
@@ -126,24 +145,6 @@ namespace ScratchPad
 
         }
         
-        // Couldn't figure out. Keep getting out of index range error. 
-        public static void FindingTheSmallestNumber()
-        {
-            Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
 
-            int[] numbers = new int[5];
-            int smallestNumber = int.MaxValue;
-
-            for (int i = 0;  i < numbers.Length; i++)
-            {
-                numbers[i] = int.Parse(Console.ReadLine());
-
-                if (numbers[i] < smallestNumber )
-                {
-                    smallestNumber = numbers[i];
-                }
-            }
-            Console.WriteLine($"The smallest number out of your list is {smallestNumber}");
-        }
     }
 }
