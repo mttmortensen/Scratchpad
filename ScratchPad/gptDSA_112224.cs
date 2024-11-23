@@ -111,6 +111,11 @@ namespace ScratchPad
                 Console.WriteLine(i);
                 
             }
+
+            if (numberToCountTo % 2 == 0)
+            {
+                Console.WriteLine(numberToCountTo);
+            }
         }
         
         // Couldn't figure out
