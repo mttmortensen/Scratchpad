@@ -142,14 +142,17 @@ namespace ScratchPad
         {
             Console.WriteLine("Enter 5 numbers and I'll print them in reverse order");
 
-            int[] fiveNumbersToReverse = new int[5]; 
+            int[] fiveNumbersToReverse = new int[5];
+            int[] reversedNumbers = new int[5];
 
-            for (int i = 5; i <= fiveNumbersToReverse.Length; i--)
+            for (int i = fiveNumbersToReverse.Length - 1; i >= 0; i--)
             {
-                Console.WriteLine(i);
+                fiveNumbersToReverse[i] = int.Parse(Console.ReadLine());
+                reversedNumbers.Append(fiveNumbersToReverse[i]);
+             
             }
 
-
+            Console.WriteLine(reversedNumbers);
         }
         
 
