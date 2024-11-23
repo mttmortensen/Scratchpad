@@ -99,6 +99,13 @@ namespace ScratchPad
 
             Console.WriteLine(":) Press a key to exit...");
         }
+
+        public static void PrintingOutEveryOtherNumber()
+        {
+            Console.WriteLine("Enter a number and I'll print out every other number leading up to it: "); 
+
+
+        }
         
         // Couldn't figure out
         public static void FindingTheSmallestNumber()
