@@ -68,13 +68,22 @@ namespace ScratchPad
 
             int[] numbers = new int[5];
             int smallestNumber = 0;
+            int currentNumber = 0;
 
-            for (int i = 0;  i <= numbers.Length; i++)
+            for (int i = 1;  i <= numbers.Length; i++)
             {
-                numbers.Append(int.Parse(Console.ReadLine()));
+                numbers[i] = int.Parse(Console.ReadLine());
+
+                if (numbers[i] > smallestNumber )
+                {
+                    smallestNumber = numbers[i];
+                }
+
+                
             }
 
-            
+            Console.WriteLine(smallestNumber);
+
         }
     }
 }
