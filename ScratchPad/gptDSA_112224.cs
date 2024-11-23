@@ -94,6 +94,17 @@ namespace ScratchPad
 
             string word = Console.ReadLine();
 
+            int letterCount = 0;
+
+            for(int i = 0; i <= word.Length; i++) 
+            {
+                if (word[i] == referenceLetter)
+                {
+                    letterCount++;
+                }
+            }
+
+            Console.WriteLine($"The letter {referenceLetter} appears in the word, {word}, {letterCount} amount of times.");
 
         }
     }
