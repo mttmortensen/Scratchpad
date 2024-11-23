@@ -62,27 +62,6 @@ namespace ScratchPad
             Console.WriteLine($"The factorial for your number is {total}");
         }
 
-        // Couldn't figure out
-        public static void FindingTheSmallestNumber()
-        {
-            Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
-
-            int[] numbers = new int[5];
-            int smallestNumber = 0;
-            int currentNumber = 0;
-
-            for (int i = 1;  i <= numbers.Length; i++)
-            {
-                numbers[i] = int.Parse(Console.ReadLine());
-
-                if (numbers[i] > smallestNumber )
-                {
-                    smallestNumber = numbers[i];
-                }
-            }
-            Console.WriteLine(smallestNumber);
-        }
-
         public static void HowManyTimesDoesTheLetterAppear()
         {
             Console.WriteLine("Let's see how many times a letter comes up.");
@@ -106,6 +85,38 @@ namespace ScratchPad
 
             Console.WriteLine($"The letter {referenceLetter.ToString().ToUpper()} appears in the word, {word}, {letterCount} amount of times.");
 
+        }
+
+        public static void CountdownFrom10()
+        {
+            Console.WriteLine("Let's countdown from 10..");
+
+            for (int i = 9; i > 0; i--)
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(1000);
+            }
+        }
+        
+        // Couldn't figure out
+        public static void FindingTheSmallestNumber()
+        {
+            Console.WriteLine("Enter 5 random numbers, and I'll tell you the smallest one:");
+
+            int[] numbers = new int[5];
+            int smallestNumber = 0;
+            int currentNumber = 0;
+
+            for (int i = 1;  i <= numbers.Length; i++)
+            {
+                numbers[i] = int.Parse(Console.ReadLine());
+
+                if (numbers[i] > smallestNumber )
+                {
+                    smallestNumber = numbers[i];
+                }
+            }
+            Console.WriteLine(smallestNumber);
         }
     }
 }

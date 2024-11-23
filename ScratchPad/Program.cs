@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptDSA_112224.HowManyTimesDoesTheLetterAppear();
+        gptDSA_112224.CountdownFrom10();
         
         Console.ReadLine();
     }
