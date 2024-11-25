@@ -16,12 +16,15 @@ namespace ScratchPad
 
             for (int i = 1; i <= number; i++) 
             {
-                Console.Write($"{i} ");
-
-                for (int j = 1; j < i; j++)
+                // Nested loops will execute fully, meaning all iterations will be done first
+                // before returning to the outter loop
+                for (int j = 1; j <= i; j++)
                 {
-                    Console.WriteLine(j);
+                    Console.Write($"{j} ");
                 }
+
+                // This will be our way to move onto the next line without disrupting the inner loop
+                Console.WriteLine();
             }
         }
     }
