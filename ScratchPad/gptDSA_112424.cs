@@ -27,5 +27,15 @@ namespace ScratchPad
                 Console.WriteLine();
             }
         }
+
+        public static void FindingTheCommonInTwoArrays()
+        {
+            Console.WriteLine("Enter two lists. Each with 5 numbers. We'll then compare them and see what values are the same");
+
+            int[] numList1 = new int[5];
+            int[] numList2 = new int[5];
+
+
+        }
     }
 }
