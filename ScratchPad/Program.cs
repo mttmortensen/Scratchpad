@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptDSA_112424.PrintANumberTriangle();
+        gptDSA_112424.FindingTheCommonInTwoArrays();
         
         Console.ReadLine();
     }

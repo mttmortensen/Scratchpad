@@ -35,7 +35,25 @@ namespace ScratchPad
             int[] numList1 = new int[5];
             int[] numList2 = new int[5];
 
+            List<int> sameNums = new List<int>();
 
+            for (int i = 0; i < numList1.Length; i++)
+            {
+                for (int j = 0; j < numList2.Length; j++)
+                {
+                    if (numList1[i] == numList2[j])
+                    {
+                        sameNums.Add(numList1[i]);
+                    }
+                }
+            }
+
+            Console.WriteLine("Here are the numbers that are the same in both lists:");
+
+            for (int i = 0; i <= sameNums.Count; i++) 
+            {
+                Console.Write($"[{sameNums[i]}]");
+            }
         }
     }
 }
