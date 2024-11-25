@@ -37,23 +37,45 @@ namespace ScratchPad
 
             List<int> sameNums = new List<int>();
 
+            // We can use just numList1 because both lists have the same count for the array
+            for (int i = 0; i < numList1.Length; i++)
+            {
+                Console.WriteLine($"Number {i} for List 1");
+                numList1[i] = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Number {i} for List 2");
+                numList2[i] = int.Parse(Console.ReadLine());
+            }
+
             for (int i = 0; i < numList1.Length; i++)
             {
                 for (int j = 0; j < numList2.Length; j++)
                 {
-                    if (numList1[i] == numList2[j])
+                    // The second part of the condition is to make sure that 
+                    // it doesn't add duplicates to sameNums if the same number appears more than once in numList1 or numList2.
+                    if (numList1[i] == numList2[j] && !sameNums.Contains(numList1[i]))
                     {
                         sameNums.Add(numList1[i]);
                     }
                 }
             }
 
-            Console.WriteLine("Here are the numbers that are the same in both lists:");
-
-            for (int i = 0; i <= sameNums.Count; i++) 
+            if (sameNums.Count == 0) 
             {
-                Console.Write($"[{sameNums[i]}]");
+                Console.WriteLine("There doesn't seem to be any common numbers in this list");
+
             }
+            else
+            {
+                Console.WriteLine("Here are the numbers that are the same in both lists:");
+
+                for (int i = 0; i <= sameNums.Count - 1; i++) 
+                {
+                    Console.Write($"[{sameNums[i]}]");
+                }
+            }
+
+            
         }
     }
 }
