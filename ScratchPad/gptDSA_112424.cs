@@ -80,7 +80,14 @@ namespace ScratchPad
 
         public static void ReverseWordsInSentence()
         {
+            Console.WriteLine("Enter a sentence, include spaces, and let's reverse the order!");
 
+            string sentence = Console.ReadLine();
+
+            for (int i = 0; i <= sentence.Length; i++)
+            {
+
+            }
         }
     }
 }
