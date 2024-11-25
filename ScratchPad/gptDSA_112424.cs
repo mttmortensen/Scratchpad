@@ -16,7 +16,10 @@ namespace ScratchPad
 
             for (int i = 1; i <= number; i++) 
             {
-                Console.WriteLine(i + " ");
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.WriteLine($"{i} {j}");
+                }
             }
         }
     }
