@@ -14,7 +14,7 @@ namespace ScratchPad
 
             int number = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= number; i++) 
+            for (int i = 1; i <= number; i++)
             {
                 // Nested loops will execute fully, meaning all iterations will be done first
                 // before returning to the outter loop
@@ -60,7 +60,7 @@ namespace ScratchPad
                 }
             }
 
-            if (sameNums.Count == 0) 
+            if (sameNums.Count == 0)
             {
                 Console.WriteLine("There doesn't seem to be any common numbers in this list");
 
@@ -69,13 +69,13 @@ namespace ScratchPad
             {
                 Console.WriteLine("Here are the numbers that are the same in both lists:");
 
-                for (int i = 0; i <= sameNums.Count - 1; i++) 
+                for (int i = 0; i <= sameNums.Count - 1; i++)
                 {
                     Console.Write($"[{sameNums[i]}]");
                 }
             }
 
-            
+
         }
 
         public static void ReverseWordsInSentence()
@@ -90,6 +90,11 @@ namespace ScratchPad
             {
                 Console.Write($"{reverseSentence[i]} ");
             }
+        }
+
+        public static void GeneratingAMultiplicationTable() 
+        {
+            
         }
     }
 }
