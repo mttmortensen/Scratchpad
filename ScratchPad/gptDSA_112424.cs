@@ -91,6 +91,10 @@ namespace ScratchPad
                 Console.WriteLine(sentence[i]);
             }
 
+            for (int i = 0; i <= reverseSentence.Length; i++)
+            {
+                Console.Write($"{reverseSentence[i]} ");
+            }
         }
     }
 }
