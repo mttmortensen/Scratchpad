@@ -88,7 +88,7 @@ namespace ScratchPad
 
             for (int i = sentence.Length - 1; i >= 0; i--) 
             {
-                Console.WriteLine(i);
+                Console.WriteLine(sentence[i]);
             }
 
         }
