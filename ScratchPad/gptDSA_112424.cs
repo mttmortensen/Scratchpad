@@ -86,12 +86,7 @@ namespace ScratchPad
 
             string[] reverseSentence = sentence.Split(' ');
 
-            for (int i = sentence.Length - 1; i >= 0; i--) 
-            {
-                Console.WriteLine(sentence[i]);
-            }
-
-            for (int i = 0; i <= reverseSentence.Length; i++)
+            for (int i = reverseSentence.Length - 1; i >= 0; i--)
             {
                 Console.Write($"{reverseSentence[i]} ");
             }
