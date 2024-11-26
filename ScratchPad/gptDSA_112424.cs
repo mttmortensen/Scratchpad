@@ -132,12 +132,15 @@ namespace ScratchPad
 
             int[] numList = new int[5];
 
+            Console.WriteLine("Let's enter the target number first: ");
             int targetNum = int.Parse(Console.ReadLine());
 
             string pairsToEqualTarget = "";
 
-            for (int i = 0; i < numList.Length; i++) 
+            Console.WriteLine("Now let's enter the numbers for the list: ");
+            for (int i = 0; i <= numList.Length; i++) 
             {
+                Console.WriteLine($"Number {i}:");
                 numList[i] = int.Parse(Console.ReadLine());
 
                 for (int j = 0; j <=  numList.Length;  j++)
