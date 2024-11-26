@@ -125,5 +125,10 @@ namespace ScratchPad
                 Console.WriteLine();
             }
         }
+
+        public static void FindingAllPairsThatAddToATarget()
+        {
+
+        }
     }
 }
