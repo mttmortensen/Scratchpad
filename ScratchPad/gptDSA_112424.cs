@@ -128,7 +128,7 @@ namespace ScratchPad
 
         public static void FindingAllPairsThatAddToATarget()
         {
-            Console.Write("Enter a list of numbers, max 5, and then a target number.\n Then we'll find pairs in the list that equal to that target number.");
+            Console.Write("Enter a list of numbers, max 5, and then a target number.\nThen we'll find pairs in the list that equal to that target number.\n");
 
             int[] numList = new int[5];
 
@@ -140,7 +140,7 @@ namespace ScratchPad
             Console.WriteLine("Now let's enter the numbers for the list: ");
             for (int i = 0; i <= numList.Length; i++) 
             {
-                Console.WriteLine($"Number {i}:");
+                Console.WriteLine($"Number {i + 1}:");
                 numList[i] = int.Parse(Console.ReadLine());
 
                 for (int j = 0; j <=  numList.Length;  j++)
