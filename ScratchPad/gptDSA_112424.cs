@@ -138,16 +138,16 @@ namespace ScratchPad
             string pairsToEqualTarget = "";
 
             Console.WriteLine("Now let's enter the numbers for the list: ");
-            for (int i = 0; i <= numList.Length; i++) 
+            for (int i = 0; i < numList.Length; i++) 
             {
                 Console.WriteLine($"Number {i + 1}:");
                 numList[i] = int.Parse(Console.ReadLine());
 
-                for (int j = 0; j <=  numList.Length;  j++)
+                for (int j = 0; j <  numList.Length;  j++)
                 {
                     if ((numList[i] + numList[j]) == targetNum)
                     {
-                        pairsToEqualTarget += $"({numList[i]}), ({numList[j]}) ";
+                        pairsToEqualTarget += $"({numList[j]}),({numList[i]}) ";
                     }
                 }
             }
