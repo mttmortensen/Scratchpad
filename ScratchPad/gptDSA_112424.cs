@@ -145,14 +145,22 @@ namespace ScratchPad
 
                 for (int j = 0; j <  numList.Length;  j++)
                 {
-                    if ((numList[i] + numList[j]) == targetNum)
+                    // The additional statement after && is to ensure
+                    // only one pair is added once
+                    if ((numList[i] + numList[j]) == targetNum && i < j)
                     {
-                        pairsToEqualTarget += $"({numList[j]}),({numList[i]}) ";
+                        pairsToEqualTarget += $"({numList[j]},{numList[i]}) ";
                     }
                 }
             }
 
-            Console.WriteLine($"Here are the pairs that equal the target number: {pairsToEqualTarget}");
+            if (string.IsNullOrEmpty(pairsToEqualTarget))
+            {
+                Console.WriteLine("Doesn't look there were any numbers that matched the target number.");
+            } else
+            {
+                Console.WriteLine($"Here are the pairs that equal the target number: {pairsToEqualTarget}");
+            }
         }
     }
 }
