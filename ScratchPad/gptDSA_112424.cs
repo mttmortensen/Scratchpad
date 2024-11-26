@@ -98,14 +98,16 @@ namespace ScratchPad
 
             int number = int.Parse(Console.ReadLine());
 
+            int[] numTable = new int[number];
+
             for (int i = 1; i <= number; i++)
             {
-                if (i % 3 == 0)
+                for (int j = 1; j <= number; j++) 
                 {
-                    Console.WriteLine(i);
-
+                    Console.WriteLine($"{i} x {j} = {j * i}\t");
                 }
-                Console.Write(i);
+
+                Console.WriteLine();
             }
         }
     }
