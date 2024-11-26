@@ -100,8 +100,23 @@ namespace ScratchPad
 
             int[] numTable = new int[number];
 
+            // This loop will start the column like so: 
+            // 1 
+            // 2
+            // 3 
+            // etc.
             for (int i = 1; i <= number; i++)
             {
+                // This loop will fill in the rest of the current column like so: 
+                // This example number will be 3
+                // 1 X X X
+                // 2 X X X 
+                // 3 X X X
+                // Target number with 4 
+                // 1 X X X X
+                // 2 X X X X
+                // 3 X X X X
+                // 4 X X X X
                 for (int j = 1; j <= number; j++) 
                 {
                     Console.WriteLine($"{i} x {j} = {j * i}\t");
