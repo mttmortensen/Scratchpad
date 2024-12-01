@@ -63,8 +63,8 @@ namespace ScratchPad
 
             for (int i = 0; i < 5; i++) 
             {
+                Console.WriteLine($"Number {i + 1}:");
                 numbers.Add(Convert.ToInt32(Console.ReadLine()));
-
                 total += numbers[i];
             }
 
