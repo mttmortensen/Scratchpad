@@ -48,13 +48,27 @@ namespace ScratchPad
                 {
                     longestName = usernames[i];
                 }
-
             }
 
             Console.WriteLine($"Longest Name is {longestName}");
+        }
 
+        public static void SumOfNumbers() 
+        {
+            Console.WriteLine("Enter 5 numbers and I'll tell you sum of them all.");
 
+            List<int> numbers = new List<int>();
 
+            int total = 0;
+
+            for (int i = 0; i < 5; i++) 
+            {
+                numbers.Add(Convert.ToInt32(Console.ReadLine()));
+
+                total += numbers[i];
+            }
+
+            Console.WriteLine($"The sum of those 5 numbers is {total}");
         }
     }
 }
