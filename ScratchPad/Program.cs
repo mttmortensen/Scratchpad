@@ -4,8 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptDSA_112424.FindingAllPairsThatAddToATarget();
-        
+        gptDSA_112924.BuildingAListOfUsernames();
+
         Console.ReadLine();
     }
 }
