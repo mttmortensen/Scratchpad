@@ -30,5 +30,26 @@ namespace ScratchPad
                 Console.Write($"{usernames[i]}, ");
             }
         }
+
+        public static void FindingTheLongestUsername()
+        {
+            Console.WriteLine("Enter 5 names and I'll tell you which one is the longest!");
+
+            List<string> usernames = new List<string>();
+
+            string longestName = "";
+
+            for (int i = 0; i < 5; i++) 
+            {
+                Console.WriteLine($"Name {i + 1}");
+                usernames.Add(Console.ReadLine());
+
+                
+
+            }
+
+
+
+        }
     }
 }
