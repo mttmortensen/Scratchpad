@@ -44,9 +44,14 @@ namespace ScratchPad
                 Console.WriteLine($"Name {i + 1}");
                 usernames.Add(Console.ReadLine());
 
-                
+                if (usernames[i].Length > longestName.Length)
+                {
+                    longestName = usernames[i];
+                }
 
             }
+
+            Console.WriteLine($"Longest Name is {longestName}");
 
 
 
