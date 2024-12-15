@@ -8,6 +8,7 @@ namespace ScratchPad
 {
     internal class gptDSA_112924
     {
+        // This is more dealing with Lists that DSAs
         public static void BuildingAListOfUsernames()
         {
             Console.WriteLine("Enter 5 names, and I'll print them out.");
