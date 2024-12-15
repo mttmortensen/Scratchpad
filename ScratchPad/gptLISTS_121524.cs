@@ -47,5 +47,27 @@ namespace ScratchPad
                 Console.WriteLine("Doesn't look like you entered any even numbers!");
             }
         }
+
+        public static void CountOccurrencesOfWord() 
+        {
+
+            List<string> listOfWords = new List<string>();
+
+            Console.WriteLine("Enter a list of words and then type 'DONE' when finished:");
+
+            foreach (string word in listOfWords) 
+            {
+                if (word == "DONE")
+                {
+                    break;
+                }
+
+                listOfWords.Add(Console.ReadLine());
+
+            }
+
+            Console.WriteLine("The program has ended");
+
+        }
     }
 }
