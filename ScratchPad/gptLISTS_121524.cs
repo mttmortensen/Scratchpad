@@ -14,8 +14,12 @@ namespace ScratchPad
 
             List<int> evenNumbers = new List<int>();
 
-            for (int i = 0; i < listOfNumbers.Count; i++) 
+            Console.WriteLine("Enter 5 numbers and I'll tell you the even ones.");
+
+            for (int i = 0; i < 5; i++) 
             {
+                Console.WriteLine($"Number: {i + 1}");
+
                 listOfNumbers.Add(Convert.ToInt32(Console.ReadLine()));
 
                 if (listOfNumbers[i] % 2 == 0)
@@ -29,11 +33,7 @@ namespace ScratchPad
             {
                 Console.Write($"{i}, ");
 
-                // Handling last entry
-                if (evenNumbers.Count - 1 == -1 )
-                {
-                    Console.Write($"{i}");
-                }
+
             }
         }
     }

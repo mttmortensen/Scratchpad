@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptDSA_112924.SumOfNumbers();
+        gptLISTS_121524.FilterEvenNumbers();
 
         Console.ReadLine();
     }
