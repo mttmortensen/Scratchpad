@@ -21,24 +21,30 @@ namespace ScratchPad
             {
                 Console.WriteLine($"Number: {i + 1}");
 
-                listOfNumbers.Add(Convert.ToInt32(Console.ReadLine()));
+                // Chat suggested this block instead of using [i] 
 
-                if (listOfNumbers[i] % 2 == 0)
+                int number = Convert.ToInt32(Console.ReadLine());
+
+                listOfNumbers.Add(number);
+
+                if (number % 2 == 0)
                 {
-                    evenNumbers.Add(listOfNumbers[i]);
+                    evenNumbers.Add(number);
                 }
             }
 
-            Console.WriteLine("The even numbers in your list are: ");
-            foreach (int i in evenNumbers) 
+            // Using string.Join() will replace the for loop
+            // And now will be able to use a condition
+            // to test if there are even numbers in the evenNumbers list
+            if (listOfNumbers.Count > 0)
             {
-                Console.Write($"{i}, ");
 
-                // Way to handle the last entry w/o a comma
-                if (listOfNumbers.Count == -1)
-                {
-                    Console.Write($"{i}");
-                }
+                Console.WriteLine("The even numbers in your list are: ");
+                Console.WriteLine(string.Join(",", evenNumbers));
+            }
+            else
+            {
+                Console.WriteLine("Doesn't look like you entered any even numbers!");
             }
         }
     }
