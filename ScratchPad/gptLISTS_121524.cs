@@ -16,6 +16,7 @@ namespace ScratchPad
 
             Console.WriteLine("Enter 5 numbers and I'll tell you the even ones.");
 
+            // I do have to hard code this condition so that this will run
             for (int i = 0; i < 5; i++) 
             {
                 Console.WriteLine($"Number: {i + 1}");
@@ -33,7 +34,11 @@ namespace ScratchPad
             {
                 Console.Write($"{i}, ");
 
-
+                // Way to handle the last entry w/o a comma
+                if (listOfNumbers.Count == -1)
+                {
+                    Console.Write($"{i}");
+                }
             }
         }
     }
