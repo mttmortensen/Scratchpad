@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLISTS_121524.FilterEvenNumbers();
+        gptLISTS_121524.CountOccurrencesOfWord();
 
         Console.ReadLine();
     }
