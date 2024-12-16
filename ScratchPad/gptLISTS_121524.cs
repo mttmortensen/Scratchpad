@@ -53,10 +53,42 @@ namespace ScratchPad
 
             List<string> listOfWords = new List<string>();
 
-                        
+            int targetWordCount = 0;
 
-            Console.WriteLine("The program has ended");
+            Console.WriteLine("Enter a list of words, set by a maximum number, and a target word, and I'll tell you how many times it appears in the list");
 
+            Console.WriteLine("Set the maximum amount of words in the list:");
+            int maxNumberOfWords = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Now let's do the target word:");
+            string targetWord = Console.ReadLine();
+
+            Console.WriteLine("Now let's create the list: ");
+            for (int i = 0; i < maxNumberOfWords; i++) 
+            {
+                Console.WriteLine($"Word {i + 1}:");
+                string word = Console.ReadLine();
+
+                listOfWords.Add(word);
+            }
+
+            foreach (string word in listOfWords) 
+            {
+                if (word == targetWord)
+                {
+                    targetWordCount++;
+                }
+            }
+
+            if (targetWordCount > 0)
+            {
+                Console.WriteLine($"The {targetWord} appeared {targetWordCount} times");
+
+            }
+            else
+            {
+                Console.WriteLine($"Doesn't look like the word, {targetWord} was in the list!");
+            }
         }
     }
 }
