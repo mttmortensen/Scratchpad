@@ -17,7 +17,7 @@ namespace ScratchPad
             Console.WriteLine("Enter 5 numbers and I'll tell you the even ones.");
 
             // I do have to hard code this condition so that this will run
-            for (int i = 0; i < 5; i++) 
+            for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine($"Number: {i + 1}");
 
@@ -48,7 +48,7 @@ namespace ScratchPad
             }
         }
 
-        public static void CountOccurrencesOfWord() 
+        public static void CountOccurrencesOfWord()
         {
 
             List<string> listOfWords = new List<string>();
@@ -64,7 +64,7 @@ namespace ScratchPad
             string targetWord = Console.ReadLine();
 
             Console.WriteLine("Now let's create the list: ");
-            for (int i = 0; i < maxNumberOfWords; i++) 
+            for (int i = 0; i < maxNumberOfWords; i++)
             {
                 Console.WriteLine($"Word {i + 1}:");
                 string word = Console.ReadLine();
@@ -72,7 +72,7 @@ namespace ScratchPad
                 listOfWords.Add(word);
             }
 
-            foreach (string word in listOfWords) 
+            foreach (string word in listOfWords)
             {
                 if (word == targetWord)
                 {
