@@ -71,5 +71,10 @@ namespace ScratchPad
             }
             
         }
+
+        public static void OnlyShortiesAllowed() 
+        {
+
+        }
     }
 }
