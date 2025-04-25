@@ -37,6 +37,7 @@ namespace ScratchPad
             }
         }
 
+        // 4.24.25
         public static void CountTheOccurrences() 
         {
             List<string> listOfWords = new List<string>();
@@ -98,6 +99,7 @@ namespace ScratchPad
             }
         }
 
+        // 4.25.25
         public static void HowPopularIsEachWord() 
         {
             Console.WriteLine("Enter a list of words (return to finish) and I'll tell you how many times each word appears and remove the ones that appear once!");
