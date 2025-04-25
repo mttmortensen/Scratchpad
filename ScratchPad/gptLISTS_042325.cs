@@ -106,7 +106,24 @@ namespace ScratchPad
 
             List<string> listOfWords = inputOfWords.Split(" ").ToList();
 
+            Dictionary<string, int> countOfWords = new Dictionary<string, int>();
 
+            foreach (string word in listOfWords) 
+            {
+                if (!countOfWords.ContainsKey(word))
+                {
+                    countOfWords.Add(word, 1);
+                }
+                else 
+                {
+                    countOfWords[word]++;
+                }
+            }
+
+            foreach (string word in countOfWords.Keys) 
+            {
+                Console.WriteLine($"{word}:");
+            }
         }
     }
 }
