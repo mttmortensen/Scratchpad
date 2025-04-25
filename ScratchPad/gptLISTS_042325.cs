@@ -36,5 +36,10 @@ namespace ScratchPad
                 Console.WriteLine(String.Join(",", doubledEvenNumbers));
             }
         }
+
+        public static void CountTheOccurrences() 
+        {
+
+        }
     }
 }
