@@ -100,6 +100,12 @@ namespace ScratchPad
 
         public static void HowPopularIsEachWord() 
         {
+            Console.WriteLine("Enter a list of words (return to finish) and I'll tell you how many times each word appears and remove the ones that appear once!");
+            
+            string inputOfWords = Console.ReadLine();
+
+            List<string> listOfWords = inputOfWords.Split(" ").ToList();
+
 
         }
     }
