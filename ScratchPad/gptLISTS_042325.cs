@@ -10,7 +10,6 @@ namespace ScratchPad
     {
         public static void DoubleEvensRemoveOdds()
         {
-            List<int> listOfNumbers = new List<int>();
 
             List<int> doubledEvenNumbers = new List<int>();
 
@@ -18,7 +17,23 @@ namespace ScratchPad
 
             for (int i = 0; i < 5; i++)
             {
+                Console.WriteLine($"Enter number {i + 1}:");
 
+                int numToCheck = Convert.ToInt32( Console.ReadLine() );
+
+                if (numToCheck % 2 == 0)
+                {
+                    doubledEvenNumbers.Add(numToCheck * 2);
+                }
+            }
+
+            if (doubledEvenNumbers.Count == 0)
+            {
+                Console.WriteLine("There seem to be no even numbers!");
+            } else 
+            {
+                Console.WriteLine("Here are your even numbers!:");
+                Console.WriteLine(String.Join(",", doubledEvenNumbers));
             }
         }
     }
