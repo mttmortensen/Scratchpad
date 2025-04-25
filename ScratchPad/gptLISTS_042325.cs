@@ -50,16 +50,18 @@ namespace ScratchPad
                 string inputWord = Console.ReadLine();
 
                 listOfWords.Add(inputWord);
-                foreach (string word in listOfWords)
+                
+            }
+            
+            foreach (string word in listOfWords)
+            {
+                if (occurancePairs.ContainsKey(word))
                 {
-                    if (occurancePairs.ContainsKey(word))
-                    {
-                        occurancePairs[word]++;
-                    } 
-                    else
-                    {
-                        occurancePairs.Add(word, 1);
-                    }
+                    occurancePairs[word]++;
+                } 
+                else
+                {
+                    occurancePairs.Add(word, 1);
                 }
             }
 
