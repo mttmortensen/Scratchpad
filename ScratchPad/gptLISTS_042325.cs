@@ -120,9 +120,22 @@ namespace ScratchPad
                 }
             }
 
-            foreach (string word in countOfWords.Keys) 
+            // This List KVP is so I can have multiple of the same values added 
+            List<KeyValuePair<string, int>> wordsWithMoreThanOne = new List<KeyValuePair<string, int>>();
+
+            foreach (var word in countOfWords) 
             {
-                Console.WriteLine($"{word}:");
+               if (word.Value > 1) 
+                {
+                    wordsWithMoreThanOne.Add(word);
+                }
+            }
+
+            wordsWithMoreThanOne.Sort((a, b) => b.Value.CompareTo(a.Value));
+
+            foreach (var words in wordsWithMoreThanOne) 
+            {
+                Console.WriteLine($"{words.Key}: {words.Value}");
             }
         }
     }
