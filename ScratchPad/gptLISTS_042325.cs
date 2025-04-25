@@ -39,7 +39,35 @@ namespace ScratchPad
 
         public static void CountTheOccurrences() 
         {
+            List<string> listOfWords = new List<string>();
 
+            Dictionary<string, int> occurancePairs = new Dictionary<string, int>();
+
+            Console.WriteLine("Enter a list of words (max 6), and I'll tell you how many times a word appears:");
+
+            for (int i = 0; i < 5; i++) 
+            {
+                string inputWord = Console.ReadLine();
+
+                listOfWords.Add(inputWord);
+                foreach (string word in listOfWords)
+                {
+                    if (occurancePairs.ContainsKey(word))
+                    {
+                        occurancePairs[word]++;
+                    } 
+                    else
+                    {
+                        occurancePairs.Add(word, 1);
+                    }
+                }
+            }
+
+            foreach (var occurance in occurancePairs) 
+            {
+                Console.WriteLine($"{occurance.Key}:{occurance.Value}");
+            }
+            
         }
     }
 }
