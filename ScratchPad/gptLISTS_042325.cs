@@ -74,7 +74,27 @@ namespace ScratchPad
 
         public static void OnlyShortiesAllowed() 
         {
+            Console.WriteLine("Enter a list of names (max 5) and I'll sort them and remove any that are 4 characters or more!");
 
+            string inputOfNames = Console.ReadLine();
+
+            List<string> listOfnames = new List<string>();
+
+            string[] names = inputOfNames.Split(" ");
+
+            foreach (string name in names) 
+            {
+                if (name.Length !> 4)
+                {
+                   listOfnames.Add(name);
+                }
+            }
+
+            Console.WriteLine("Here's your list!");
+            foreach (string name in listOfnames)
+            {
+                Console.WriteLine(name);
+            }
         }
     }
 }
