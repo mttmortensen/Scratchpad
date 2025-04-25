@@ -97,5 +97,10 @@ namespace ScratchPad
                 Console.WriteLine(name);
             }
         }
+
+        public static void HowPopularAreYourWords() 
+        {
+
+        }
     }
 }
