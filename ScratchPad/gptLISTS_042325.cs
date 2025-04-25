@@ -84,13 +84,14 @@ namespace ScratchPad
 
             foreach (string name in names) 
             {
-                if (name.Length !> 4)
+                if (name.Length <= 4)
                 {
                    listOfnames.Add(name);
                 }
             }
 
             Console.WriteLine("Here's your list!");
+            listOfnames.Sort();
             foreach (string name in listOfnames)
             {
                 Console.WriteLine(name);
