@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLISTS_042325.OnlyShortiesAllowed();
+        gptLISTS_042325.HowPopularIsEachWord();
 
         Console.ReadLine();
     }

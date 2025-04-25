@@ -72,7 +72,7 @@ namespace ScratchPad
             
         }
 
-        public static void OnlyShortiesAllowed() 
+        public static void OnlyShortNamesAllowed() 
         {
             Console.WriteLine("Enter a list of names (max 5) and I'll sort them and remove any that are 4 characters or more!");
 
@@ -98,7 +98,7 @@ namespace ScratchPad
             }
         }
 
-        public static void HowPopularAreYourWords() 
+        public static void HowPopularIsEachWord() 
         {
 
         }
