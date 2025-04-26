@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLISTS_042325.GroceryInventoryManager();
+        gptLISTS_042625.GroceryInventoryCatagoryManager();
 
         Console.ReadLine();
     }
