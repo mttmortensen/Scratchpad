@@ -140,5 +140,10 @@ namespace ScratchPad
                 Console.WriteLine($"{words.Key}: {words.Value}");
             }
         }
+
+        public static void GroceryInventoryManager() 
+        {
+
+        }
     }
 }
