@@ -143,7 +143,29 @@ namespace ScratchPad
 
         public static void GroceryInventoryManager() 
         {
+            List<KeyValuePair<string, int>> groceryList = new List<KeyValuePair<string, int>>();
 
+            string groceryItem = "";
+            int groceryItemCount = 0;
+
+            // Writing out the list and it's quantity
+            // Storing it to groceryList
+            for (int i = 0; i < 5; i++) 
+            {
+                Console.WriteLine($"Enter Item {i + 1}:");
+                groceryItem = Console.ReadLine();
+
+                Console.WriteLine("Enter Quanity:");
+                groceryItemCount = Convert.ToInt32(Console.ReadLine());
+
+                groceryList.Add(new KeyValuePair<string, int>(groceryItem, groceryItemCount));
+            }
+
+            // Output to console
+            foreach (var item in groceryList) 
+            {
+                Console.WriteLine($"ITEM: {item.Key}: QTY: {item.Value}");
+            }
         }
     }
 }
