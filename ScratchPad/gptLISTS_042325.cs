@@ -148,6 +148,8 @@ namespace ScratchPad
             string groceryItem = "";
             int groceryItemCount = 0;
 
+            Console.WriteLine("Enter a grocery list of 5 items and it's quantity. Don't worry if you have to add the same item again");
+
             // Writing out the list and it's quantity
             // Storing it to groceryList
             for (int i = 0; i < 5; i++) 
@@ -158,7 +160,14 @@ namespace ScratchPad
                 Console.WriteLine("Enter Quanity:");
                 groceryItemCount = Convert.ToInt32(Console.ReadLine());
 
+
+                if (groceryList[i].Key == groceryItem) 
+                {
+                    groceryList.Add(new KeyValuePair<string, int>(groceryItem, groceryItemCount++));
+                }
+                
                 groceryList.Add(new KeyValuePair<string, int>(groceryItem, groceryItemCount));
+
             }
 
             // Output to console
