@@ -148,6 +148,8 @@ namespace ScratchPad
             string groceryItem = "";
             int groceryItemCount = 0;
 
+            int totalGroceryItemCount = 0;
+
             Console.WriteLine("Enter a grocery list of 5 items and it's quantity. Don't worry if you have to add the same item again");
 
             // Writing out the list and it's quantity
@@ -160,11 +162,6 @@ namespace ScratchPad
                 Console.WriteLine("Enter Quanity:");
                 groceryItemCount = Convert.ToInt32(Console.ReadLine());
 
-
-                if (groceryList[i].Key == groceryItem) 
-                {
-                    groceryList.Add(new KeyValuePair<string, int>(groceryItem, groceryItemCount++));
-                }
                 
                 groceryList.Add(new KeyValuePair<string, int>(groceryItem, groceryItemCount));
 
@@ -174,7 +171,10 @@ namespace ScratchPad
             foreach (var item in groceryList) 
             {
                 Console.WriteLine($"ITEM: {item.Key}: QTY: {item.Value}");
+                totalGroceryItemCount += item.Value;
             }
+
+            Console.WriteLine($"The total items of all items is {totalGroceryItemCount}");
         }
     }
 }
