@@ -41,6 +41,7 @@ namespace ScratchPad
         }
     }
 
+    // This interface defines the contract for greeting and changing names
     interface IGreetable
     {
         string Greet();
@@ -68,13 +69,15 @@ namespace ScratchPad
         }
     }
 
+    // Using "User" allows for AdminUser not to declare _name again
     internal class AdminUser : User, IGreetable
     {
 
         public AdminUser(string name): base(name)
         { }
 
-        public  string Greet()
+        // Unlike the User class, it seems the AdminUser class does not need to implement ChangeName
+        public string Greet()
         {
             return $"Hello Admin {_name}!";
         }
