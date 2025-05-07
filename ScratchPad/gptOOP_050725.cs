@@ -14,7 +14,7 @@ namespace ScratchPad
             Console.WriteLine("Enter your name: ");
             string userName = Console.ReadLine();
 
-            User user = new User(userName);
+            IGreetable user = new User(userName);
             Console.WriteLine(user.Greet());
         }
 
@@ -23,7 +23,7 @@ namespace ScratchPad
             Console.WriteLine("Enter your name: ");
             string userName = Console.ReadLine();
 
-            User user = new User(userName);
+            IGreetable user = new User(userName);
             Console.WriteLine(user.Greet());
 
             Console.WriteLine("Enter a new name: ");
@@ -36,12 +36,19 @@ namespace ScratchPad
         {
             Console.WriteLine("Enter your name: ");
             string userName = Console.ReadLine();
-            AdminUser adminUser = new AdminUser(userName);
+            IGreetable adminUser = new AdminUser(userName);
             Console.WriteLine(adminUser.Greet());
         }
     }
 
-    internal class User
+    interface IGreetable
+    {
+        string Greet();
+
+        string ChangeName(string newName);
+    }
+
+    internal class User : IGreetable
     {
         protected string _name;
 
@@ -50,7 +57,7 @@ namespace ScratchPad
             _name = name;
         }
 
-        public virtual string Greet()
+        public string Greet()
         {
             return $"Hello {_name}!";
         }
@@ -61,12 +68,13 @@ namespace ScratchPad
         }
     }
 
-    internal class AdminUser : User
+    internal class AdminUser : User, IGreetable
     {
-        public AdminUser(string name) : base(name)
-        {}
 
-        public override string Greet()
+        public AdminUser(string name): base(name)
+        { }
+
+        public  string Greet()
         {
             return $"Hello Admin {_name}!";
         }
