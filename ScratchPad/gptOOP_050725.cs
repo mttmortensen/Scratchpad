@@ -39,6 +39,18 @@ namespace ScratchPad
             IGreetable adminUser = new AdminUser(userName);
             Console.WriteLine(adminUser.Greet());
         }
+
+        public void GetUserStatus() 
+        {
+            Console.WriteLine("Enter your name: ");
+            string userName = Console.ReadLine();
+            User user = new User(userName);
+            Console.WriteLine(user.Greet());
+            Console.WriteLine("Enter your status: ");
+            string status = Console.ReadLine();
+            user.SetStatus(status);
+            Console.WriteLine(user.GetStatus());
+        }
     }
 
     // This interface defines the contract for greeting and changing names
@@ -52,6 +64,7 @@ namespace ScratchPad
     internal class User : IGreetable
     {
         protected string _name;
+        private string _status;
 
         public User(string name)
         {
@@ -67,6 +80,19 @@ namespace ScratchPad
         {
             return _name = newName;
         }
+
+        // These methods are not part of IGreetable
+        public string GetStatus()
+        {
+            return $"Current Status: {_status}";
+        }
+
+        public string SetStatus(string status)
+        {
+            _status = status;
+            return _status;
+        }
+
     }
 
     // Using "User" allows for AdminUser not to declare _name again

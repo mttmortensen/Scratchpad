@@ -8,7 +8,7 @@ internal class Program
         gptOOP_050725 gptOOP_050725 = new gptOOP_050725();
 
         // Call the GreetUser to execute the code
-        gptOOP_050725.GreetAdminUser();
+        gptOOP_050725.GetUserStatus();
 
         Console.ReadLine();
     }
