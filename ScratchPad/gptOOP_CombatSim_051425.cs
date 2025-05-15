@@ -34,9 +34,16 @@ namespace ScratchPad
                 _health = 0;
             }
 
-            return $"{_name} takes {amount} damage, health now at {_health}";
+            return $"{_name} takes {amount} damage";
+        }
+
+        public string GetHealth() 
+        {
+            return $"{_name}'s health is currently at { _health}";
         }
     }
+
+    // Derived classes for specific character types
     public class Warrior : Character
     {
         public Warrior(string name) : base(name, "Warrior")
