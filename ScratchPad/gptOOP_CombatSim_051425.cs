@@ -34,8 +34,32 @@ namespace ScratchPad
         }
         public override string Attack()
         {
-            return $"{_name} the {_classes} is attacking with a sword!";
+            return $"{_name} the {_classes} attacks with a sword!";
         }
 
+    }
+
+    public class Mage : Character
+    {
+        public Mage(string name, int health) : base(name, "Mage")
+        {
+            _health = health;
+        }
+        public override string Attack()
+        {
+            return $"{_name} the {_classes} casts a fireball!";
+        }
+    }
+
+    public class Thief : Character
+    {
+        public Thief(string name, int health) : base(name, "Thief")
+        {
+            _health = health;
+        }
+        public override string Attack()
+        {
+            return $"{_name} the {_classes} strikes from the shadows!";
+        }
     }
 }
