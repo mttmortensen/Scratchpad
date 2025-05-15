@@ -43,12 +43,18 @@ namespace ScratchPad
             return $"{_name}'s health is currently at { _health}";
         }
 
-        public string SetHealth(int amount) 
+        public string Heal(int amount) 
         {
             int newHealth = _health + amount;
-            if (newHealth > _maxHealth) 
+
+            if (newHealth == _maxHealth) 
             {
                 return $"{_name}'s health is already at max";
+            }
+
+            if (newHealth > _maxHealth)
+            {
+                newHealth = _maxHealth;
             }
 
             return $"{_name}'s heals for {amount}";
