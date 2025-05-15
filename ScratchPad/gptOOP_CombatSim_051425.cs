@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace ScratchPad
 {
+    interface IDamageable
+    {
+        string TakeDamage(int amount);
+    
+    }
+
+    interface ICanHeal
+    {
+        string Heal(int amount);
+    }
+
+    interface ICanCastMagic
+    {
+        string CastSpell();
+    }
+
+
     // Base class for characters
-    public abstract class Character
+    public abstract class Character: IDamageable, ICanHeal
     {
         protected string _name;
         protected string _classes;
@@ -51,7 +68,7 @@ namespace ScratchPad
 
             if (newHealth > _maxHealth)
             {
-                _health = _maxHealth;
+                _health = newHealth;
             }
 
             return $"{_name}'s heals for {amount}";
@@ -76,7 +93,7 @@ namespace ScratchPad
 
     }
 
-    public class Mage : Character
+    public class Mage : Character, ICanCastMagic
     {
         private int _mana = 75; // Mana set to 75 for testing
         public Mage(string name) : base(name, "Mage")
@@ -98,6 +115,19 @@ namespace ScratchPad
         public string GetMana()
         {
             return $"{_name}'s mana is currently at {_mana}";
+        }
+
+        public string CastSpell() 
+        {
+            if (_mana >= 10) 
+            {
+                _mana -= 10; // Casting a spell costs 10 mana
+                return $"{_name} casts a spell!";
+            }
+            else
+            {
+                return $"{_name} does not have enough mana to cast a spell.";
+            }
         }
     }
 

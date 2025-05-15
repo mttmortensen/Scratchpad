@@ -28,13 +28,22 @@ internal class Program
         //Console.WriteLine(mage.GetHealth()); 
 
         // Challenge 4A
-        Warrior warrior = new Warrior("Throg");
-        Console.WriteLine(warrior.TakeDamage(30));
-        Console.WriteLine(warrior.GetHealth());
-        Console.WriteLine(warrior.Rest());
-        Console.WriteLine(warrior.GetHealth());
+        //Warrior warrior = new Warrior("Throg");
+        //Console.WriteLine(warrior.TakeDamage(30));
+        //Console.WriteLine(warrior.GetHealth());
+        //Console.WriteLine(warrior.Rest());
+        //Console.WriteLine(warrior.GetHealth());
 
         // Challenge 4B
+        //Mage mage = new Mage("Elara");
+        //Console.WriteLine(mage.TakeDamage(30));
+        //Console.WriteLine(mage.GetHealth());
+        //Console.WriteLine(mage.GetMana());
+        //Console.WriteLine(mage.Rest());
+        //Console.WriteLine(mage.GetHealth());
+        //Console.WriteLine(mage.GetMana());
+
+        // Challenge 5
         Mage mage = new Mage("Elara");
         Console.WriteLine(mage.TakeDamage(30));
         Console.WriteLine(mage.GetHealth());
@@ -42,6 +51,8 @@ internal class Program
         Console.WriteLine(mage.Rest());
         Console.WriteLine(mage.GetHealth());
         Console.WriteLine(mage.GetMana());
+        Console.WriteLine(mage.CastSpell());
+
 
         Console.ReadLine();
     }
