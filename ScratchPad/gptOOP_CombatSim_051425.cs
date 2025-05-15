@@ -26,11 +26,11 @@ namespace ScratchPad
             return $"The {_classes} is attacking!";
         }
     }
-    public class Warror : Character
+    public class Warrior : Character
     {
-        public Warror(string name, int health) : base(name, "Warror")
+        public Warrior(string name) : base(name, "Warrior")
         {
-            _health = health;
+            _health = 150;
         }
         public override string Attack()
         {
@@ -41,9 +41,9 @@ namespace ScratchPad
 
     public class Mage : Character
     {
-        public Mage(string name, int health) : base(name, "Mage")
+        public Mage(string name) : base(name, "Mage")
         {
-            _health = health;
+            _health = 125;
         }
         public override string Attack()
         {
@@ -53,9 +53,9 @@ namespace ScratchPad
 
     public class Thief : Character
     {
-        public Thief(string name, int health) : base(name, "Thief")
+        public Thief(string name) : base(name, "Thief")
         {
-            _health = health;
+            _health = 75;
         }
         public override string Attack()
         {
