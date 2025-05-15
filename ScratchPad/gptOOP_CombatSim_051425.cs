@@ -25,6 +25,17 @@ namespace ScratchPad
         {
             return $"The {_classes} is attacking!";
         }
+
+        public string TakeDamage(int amount)
+        {
+            _health -= amount;
+            if (_health < 0)
+            {
+                _health = 0;
+            }
+
+            return $"{_name} takes {amount} damage, health now at {_health}";
+        }
     }
     public class Warrior : Character
     {
