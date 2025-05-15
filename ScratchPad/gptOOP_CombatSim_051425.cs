@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ScratchPad
 {
     // Base class for characters
-    public class Character
+    public abstract class Character
     {
         protected string _name;
         protected string _classes;
@@ -22,10 +22,7 @@ namespace ScratchPad
 
         }
 
-        public virtual string Attack()
-        {
-            return $"The {_classes} is attacking!";
-        }
+        public abstract string Attack();
 
         public string TakeDamage(int amount)
         {
@@ -58,6 +55,12 @@ namespace ScratchPad
             }
 
             return $"{_name}'s heals for {amount}";
+        }
+
+        public virtual string Rest() 
+        {
+            _health += 10; // Rest restores 10 health
+            return $"{_name} rests and recovers 10 health.";
         }
     }
 
