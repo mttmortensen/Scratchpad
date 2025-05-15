@@ -4,11 +4,17 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        // Create an instance of the gptOOP_050725 class
-        gptOOP_050725 gptOOP_050725 = new gptOOP_050725();
+        List<Character> party = new List<Character> 
+        {
+            new Warrior("Throg"),
+            new Mage("Elara"),
+            new Thief("Lirael")
+        };
 
-        // Call the GreetUser to execute the code
-        gptOOP_050725.GetUserStatus();
+        foreach (var character in party)
+        {
+            Console.WriteLine(character.Attack());
+        }
 
         Console.ReadLine();
     }
