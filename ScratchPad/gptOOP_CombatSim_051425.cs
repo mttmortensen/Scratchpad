@@ -12,6 +12,7 @@ namespace ScratchPad
         protected string _name;
         protected string _classes;
         private int _health = 0;
+        private int _maxHealth = 100; // Default max health
 
         public Character(string name, string classes)
         {
@@ -40,6 +41,17 @@ namespace ScratchPad
         public string GetHealth() 
         {
             return $"{_name}'s health is currently at { _health}";
+        }
+
+        public string SetHealth(int amount) 
+        {
+            int newHealth = _health + amount;
+            if (newHealth > _maxHealth) 
+            {
+                return $"{_name}'s health is already at max";
+            }
+
+            return $"{_name}'s heals for {amount}";
         }
     }
 

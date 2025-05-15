@@ -22,6 +22,7 @@ internal class Program
         Console.WriteLine(mage.Attack());
         Console.WriteLine(mage.TakeDamage(20));
         Console.WriteLine(mage.GetHealth());
+        Console.WriteLine(mage.SetHealth(30)); // This should come back saying it's at full health already
 
         Console.ReadLine();
     }
