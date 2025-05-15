@@ -59,7 +59,7 @@ namespace ScratchPad
 
         public virtual string Rest() 
         {
-            _health += 10; // Rest restores 10 health
+            this.Heal(10);
             return $"{_name} rests and recovers 10 health.";
         }
     }
