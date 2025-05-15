@@ -51,7 +51,7 @@ namespace ScratchPad
 
             if (newHealth > _maxHealth)
             {
-                newHealth = _maxHealth;
+                _health = _maxHealth;
             }
 
             return $"{_name}'s heals for {amount}";
@@ -78,11 +78,21 @@ namespace ScratchPad
 
     public class Mage : Character
     {
+        private int _mana = 75; // Mana set to 75 for testing
         public Mage(string name) : base(name, "Mage")
         {}
         public override string Attack()
         {
             return $"{_name} the {_classes} casts a fireball!";
+        }
+
+        public override string Rest()
+        {
+            // Base will still restore health by 10?
+
+            _mana += 10; // Rest restores 10 mana
+            return $"{_name} the {_classes} meditates and recovers 10 Mana and HP. Mana at {_mana}";
+
         }
     }
 

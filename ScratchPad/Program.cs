@@ -34,6 +34,13 @@ internal class Program
         Console.WriteLine(warrior.Rest());
         Console.WriteLine(warrior.GetHealth());
 
+        // Challenge 4B
+        Mage mage = new Mage("Elara");
+        Console.WriteLine(mage.TakeDamage(30));
+        Console.WriteLine(mage.GetHealth());
+        Console.WriteLine(mage.Rest());
+        Console.WriteLine(mage.GetHealth());
+
         Console.ReadLine();
     }
 }
