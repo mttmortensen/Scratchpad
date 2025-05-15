@@ -22,7 +22,10 @@ internal class Program
         Console.WriteLine(mage.Attack());
         Console.WriteLine(mage.TakeDamage(20));
         Console.WriteLine(mage.GetHealth());
-        Console.WriteLine(mage.SetHealth(30)); // This should come back saying it's at full health already
+        Console.WriteLine(mage.Heal(30));
+        // This should come back with the same value, 80, since the max health is 100  and last statement was 80 + 30
+        // It's a bug but it still works
+        Console.WriteLine(mage.GetHealth()); 
 
         Console.ReadLine();
     }
