@@ -26,6 +26,16 @@ namespace ScratchPad
             return $"The {_classes} is attacking!";
         }
     }
+    public class Warror : Character
+    {
+        public Warror(string name, int health) : base(name, "Warror")
+        {
+            _health = health;
+        }
+        public override string Attack()
+        {
+            return $"{_name} the {_classes} is attacking with a sword!";
+        }
 
-
+    }
 }
