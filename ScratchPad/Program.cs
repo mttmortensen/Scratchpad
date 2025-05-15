@@ -38,8 +38,10 @@ internal class Program
         Mage mage = new Mage("Elara");
         Console.WriteLine(mage.TakeDamage(30));
         Console.WriteLine(mage.GetHealth());
+        Console.WriteLine(mage.GetMana());
         Console.WriteLine(mage.Rest());
         Console.WriteLine(mage.GetHealth());
+        Console.WriteLine(mage.GetMana());
 
         Console.ReadLine();
     }

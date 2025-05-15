@@ -88,11 +88,16 @@ namespace ScratchPad
 
         public override string Rest()
         {
-            // Base will still restore health by 10?
 
-            _mana += 10; // Rest restores 10 mana
-            return $"{_name} the {_classes} meditates and recovers 10 Mana and HP. Mana at {_mana}";
+            base.Rest();
+            _mana += 10; // Rest for Mage subclass restores 10 mana
+            return $"{_name} the {_classes} meditates and recovers 10 Mana and HP.";
 
+        }
+
+        public string GetMana()
+        {
+            return $"{_name}'s mana is currently at {_mana}";
         }
     }
 
