@@ -11,7 +11,7 @@ namespace ScratchPad
     {
         protected string _name;
         protected string _classes;
-        protected int _health = 0;
+        private int _health = 0;
 
         public Character(string name, string classes)
         {
@@ -29,9 +29,7 @@ namespace ScratchPad
     public class Warrior : Character
     {
         public Warrior(string name) : base(name, "Warrior")
-        {
-            _health = 150;
-        }
+        {}
         public override string Attack()
         {
             return $"{_name} the {_classes} attacks with a sword!";
@@ -42,9 +40,7 @@ namespace ScratchPad
     public class Mage : Character
     {
         public Mage(string name) : base(name, "Mage")
-        {
-            _health = 125;
-        }
+        {}
         public override string Attack()
         {
             return $"{_name} the {_classes} casts a fireball!";
@@ -54,9 +50,7 @@ namespace ScratchPad
     public class Thief : Character
     {
         public Thief(string name) : base(name, "Thief")
-        {
-            _health = 75;
-        }
+        {}
         public override string Attack()
         {
             return $"{_name} the {_classes} strikes from the shadows!";
