@@ -9,6 +9,23 @@ namespace ScratchPad
     // Base class for characters
     public class Character
     {
-        
+        protected string _name;
+        protected string _classes;
+        protected int _health = 0;
+
+        public Character(string name, string classes)
+        {
+            _name = name;
+            _classes = classes;
+            _health = 100; // Default health
+
+        }
+
+        public virtual string Attack()
+        {
+            return $"The {_classes} is attacking!";
+        }
     }
+
+
 }
