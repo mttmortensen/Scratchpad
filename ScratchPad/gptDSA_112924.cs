@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScratchPad
+namespace ChatChallenges
 {
     internal class gptDSA_112924
     {

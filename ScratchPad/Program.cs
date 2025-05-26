@@ -1,4 +1,4 @@
-﻿using ScratchPad;
+﻿using ChatChallenges;
 
 internal class Program
 {
