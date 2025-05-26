@@ -8,9 +8,11 @@ namespace Leetcode
 {
     public class gpt_ListsArrays
     {
-        public int TakeAListAndReverseItToAString(List<int> list) 
+        public string TakeAListAndReverseItToAString(List<int> list) 
         {
-            return 
+            // Need to get a list of strings first
+            // Somehow then reverse the list of ints 
+            // And then turn it into a string
         }
     }
 }
