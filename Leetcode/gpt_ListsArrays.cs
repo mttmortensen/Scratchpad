@@ -10,9 +10,9 @@ namespace Leetcode
     {
         public string TakeAListAndReverseItToAString(List<int> list) 
         {
-            // Need to get a list of strings first
-            // Somehow then reverse the list of ints 
-            // And then turn it into a string
+            // Need to covert the list of ints to list of strings first
+            // Somehow then reverse the list of strings 
+            // And then turn it into a single string
         }
     }
 }
