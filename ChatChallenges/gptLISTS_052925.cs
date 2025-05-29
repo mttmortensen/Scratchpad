@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace ChatChallenges
 {
-    internal class gptLISTS_052925
+    public static class gptLISTS_052925
     {
+        public static List<int> OnlyReturningEvenNumbers(List<int> listOfNumbers)         
+        {
+            List<int> newEvenList = new List<int>();
+
+            foreach (int num in listOfNumbers) 
+            {
+                if (num % 2 == 0) 
+                {
+                    newEvenList.Add(num);
+                }
+            }
+
+            return newEvenList;
+        }
     }
 }
