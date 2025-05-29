@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Leetcode
 {
-    public class gpt_ListsArrays
+    public static class gpt_ListsArrays
     {
-        public string TakeAListAndReverseItToAString(List<int> listOfInts) 
+        public static string TakeAListAndReverseItToAString(List<int> listOfInts) 
         {
             // Need to covert the list of ints to list of strings first
             List<string> listOfStrings = new List<string>();
