@@ -8,6 +8,12 @@ namespace ChatChallenges
 {
     public class gptLISTS_053025
     {
+        public static void GettingInputAndDisplayingLargestNumber() 
+        {
+            Console.WriteLine("=== Enter a list of Numbers and I'll give you the largest: ===");
+            string strOfNums = Console.ReadLine();
+        }
+
         private static int FindingTheLargestNumberInAList(List<int> listOfnums)
         {
             int currentMax = 0;
