@@ -30,5 +30,9 @@ namespace ChatChallenges
         // A 'head' is a naming why of saying the first item in the list
         // A starting point is another way of looking at it. 
         private Node _head;
+        
+        // Here is where we'll do the logic getting the values added in the correct spot 
+        // And setting up each node to have the _next pointer
+        public void Add(int value) { }
     }
 }
