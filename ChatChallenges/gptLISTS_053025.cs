@@ -23,7 +23,7 @@ namespace ChatChallenges
 
             int largestNum = FindingTheLargestNumberInAList(intListOfNums);
 
-            Console.WriteLine($"The largest number out of your list was {largestNum}!");
+            Console.Write($"The largest number out of your list was {largestNum}!");
 
         }
 
