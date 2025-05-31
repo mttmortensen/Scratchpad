@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLISTS_052925.GatherListInputsAndReturnEvens();
+        gptLISTS_053025.GettingInputAndDisplayingLargestNumber();
         Console.ReadLine();
     }
 }
