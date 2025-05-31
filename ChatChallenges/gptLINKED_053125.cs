@@ -9,4 +9,9 @@ namespace ChatChallenges
     public class gptLINKED_053125
     {
     }
+
+    public class Node 
+    {
+
+    }
 }
