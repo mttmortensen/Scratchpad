@@ -13,6 +13,9 @@ namespace ChatChallenges
     public class Node
     {
         public int _value;
+
+        // This isn't recursion, just a self-referential data structure.
+        // Very common when modeling chains, trees, graphs, etc.
         public Node _next;
 
         public Node(int value, Node next)
@@ -24,6 +27,8 @@ namespace ChatChallenges
 
     public class MyLinkedList 
     {
-
+        // A 'head' is a naming why of saying the first item in the list
+        // A starting point is another way of looking at it. 
+        private Node _head;
     }
 }
