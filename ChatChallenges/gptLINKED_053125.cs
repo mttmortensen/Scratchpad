@@ -10,7 +10,19 @@ namespace ChatChallenges
     {
     }
 
-    public class Node 
+    public class Node
+    {
+        public int _value;
+        public Node _next;
+
+        public Node(int value, Node next)
+        {
+            _value = value;
+            _next = next;
+        }
+    }
+
+    public class MyLinkedList 
     {
 
     }
