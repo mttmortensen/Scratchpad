@@ -12,6 +12,19 @@ namespace ChatChallenges
         {
             Console.WriteLine("=== Enter a list of Numbers and I'll give you the largest: ===");
             string strOfNums = Console.ReadLine();
+
+            List<string> strListOfNums = strOfNums.Split(" ").ToList();
+            List<int> intListOfNums = new List<int>();
+
+            foreach (string s in strListOfNums) 
+            {
+                intListOfNums.Add(int.Parse(s));
+            }
+
+            int largestNum = FindingTheLargestNumberInAList(intListOfNums);
+
+            Console.WriteLine($"The largest number out of your list was {largestNum}!");
+
         }
 
         private static int FindingTheLargestNumberInAList(List<int> listOfnums)
