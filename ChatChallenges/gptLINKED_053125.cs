@@ -8,10 +8,12 @@ namespace ChatChallenges
 {
     public class gptLINKED_053125
     {
-        public static void ShowSinglyLinkedLists() 
+        SinglyLinkedList myLinkedList = new SinglyLinkedList();
+
+        public void ShowSinglyLinkedLists() 
         {
             Console.WriteLine("Starting to create the Linked List");
-            SinglyLinkedList myLinkedList = new SinglyLinkedList();
+            
 
             Console.WriteLine("\nFirst call is myLinkedList.Add(5)");
             myLinkedList.Add(5);
@@ -33,6 +35,12 @@ namespace ChatChallenges
 
             Console.WriteLine("\nmyLinkedList ends at: ");
             myLinkedList.PrintAll();
+
+        }
+
+        public void ShowLastValueInALinkedList() 
+        {
+            Console.WriteLine($"The last value myLinkedList is: {myLinkedList.GetLastValue()}");
 
         }
     }
@@ -89,6 +97,18 @@ namespace ChatChallenges
                 Console.WriteLine($"Value: {current._value}");
                 current = current._next;
             }
+        }
+
+        public Node GetLastValue() 
+        {
+            Node current = _head;
+
+            while (current._next != null) 
+            {
+                current = current._next;
+            }
+
+            return current;
         }
     }
     
