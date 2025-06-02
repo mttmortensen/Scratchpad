@@ -48,21 +48,21 @@ namespace ChatChallenges
         }
     }
 
-    public class SinglyLinkedList 
+    public class SinglyLinkedList
     {
         // A 'head' is a naming why of saying the first item in the list
         // A starting point is another way of looking at it. 
         private Node _head;
-        
+
         // Here is where we'll do the logic getting the values added in the correct spot 
         // And setting up each node to have the _next pointer
-        public void Add(int value) 
+        public void Add(int value)
         {
             // Step 1. Create a new Node and set it to the value of the parameter from Add
-            Node newNode = new Node(value, null); 
+            Node newNode = new Node(value, null);
 
             // Step 2. We need to see if this linked list is empty or not. 
-            if (_head == null) 
+            if (_head == null)
             {
                 // If it is empty then set it to _head so we can start building the linked list
                 _head = newNode;
@@ -72,7 +72,7 @@ namespace ChatChallenges
             // Step 3. If the list isn't empty then we create a reference
             Node current = _head;
             // This will only run if ._next has a Node object 
-            while (current._next != null) 
+            while (current._next != null)
             {
                 // This moves us till we get to the end of the list
                 // Remember the end of the list is always ending with null in "next" 
@@ -90,11 +90,11 @@ namespace ChatChallenges
         }
 
         // This logic is to print all the objects in the linked list
-        public void PrintAll() 
+        public void PrintAll()
         {
             Node current = _head;
 
-            while (current != null) 
+            while (current != null)
             {
                 Console.WriteLine($"Value: {current._value}");
                 current = current._next;
@@ -102,7 +102,7 @@ namespace ChatChallenges
         }
 
         // You're just getting the last value in the list
-        public Node GetLastValue() 
+        public Node GetLastValue()
         {
             if (_head == null)
             {
@@ -116,7 +116,7 @@ namespace ChatChallenges
             // But "current" isn't a copy of "_head" it's just a reference, a pointer. 
             Node current = _head;
 
-            while (current._next != null) 
+            while (current._next != null)
             {
                 // This is what moves the list forward 
                 // Remember ._next at this point already exists in memory 
@@ -128,6 +128,22 @@ namespace ChatChallenges
             // we just need the list to get to the end with that while loop 
             // and then just return it. 
             return current;
+        }
+
+        public bool Contains(int targetNum) 
+        {
+            Node current = _head;
+
+            while (current != null) 
+            {
+                if (current._value == targetNum)
+                {
+                    return true;
+                }
+
+                current = current._next;
+            }
+            return false;
         }
     }
     
