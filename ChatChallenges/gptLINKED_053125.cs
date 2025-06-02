@@ -40,7 +40,29 @@ namespace ChatChallenges
 
         public void ShowLastValueInALinkedList() 
         {
-            Console.WriteLine($"The last value myLinkedList is: {myLinkedList.GetLastValue()}");
+            Console.WriteLine("Starting to create the Linked List");
+
+
+            Console.WriteLine("\nFirst call is myLinkedList.Add(5)");
+            myLinkedList.Add(5);
+
+            Console.WriteLine("myLinkedList currently is at: ");
+            myLinkedList.PrintAll();
+
+            Console.WriteLine("\nSecond call is myLinkedList.Add(10)");
+            myLinkedList.Add(10);
+
+            Console.WriteLine("myLinkedList currently is at: ");
+            myLinkedList.PrintAll();
+
+            Console.WriteLine("\nThird call is myLinkedList.Add(20)");
+            myLinkedList.Add(20);
+
+            Console.WriteLine("myLinkedList currently is at: ");
+            myLinkedList.PrintAll();
+
+            Node lastValue = myLinkedList.GetLastValue();
+            Console.WriteLine($"\nThe last value myLinkedList is: {lastValue._value}");
 
         }
     }
@@ -101,6 +123,12 @@ namespace ChatChallenges
 
         public Node GetLastValue() 
         {
+            if (_head == null)
+            {
+                Console.WriteLine("List is empty. No last value to return.");
+                return null;
+            }
+
             Node current = _head;
 
             while (current._next != null) 
