@@ -12,27 +12,7 @@ namespace ChatChallenges
 
         public void ShowSinglyLinkedLists() 
         {
-            Console.WriteLine("Starting to create the Linked List");
-            
-
-            Console.WriteLine("\nFirst call is myLinkedList.Add(5)");
-            myLinkedList.Add(5);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
-            Console.WriteLine("\nSecond call is myLinkedList.Add(10)");
-            myLinkedList.Add(10);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
-            Console.WriteLine("\nThird call is myLinkedList.Add(20)");
-            myLinkedList.Add(20);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
+            myLinkedList = EstablishTheLinkedList();
             Console.WriteLine("\nmyLinkedList ends at: ");
             myLinkedList.PrintAll();
 
@@ -40,30 +20,31 @@ namespace ChatChallenges
 
         public void ShowLastValueInALinkedList() 
         {
-            Console.WriteLine("Starting to create the Linked List");
-
-
-            Console.WriteLine("\nFirst call is myLinkedList.Add(5)");
-            myLinkedList.Add(5);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
-            Console.WriteLine("\nSecond call is myLinkedList.Add(10)");
-            myLinkedList.Add(10);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
-            Console.WriteLine("\nThird call is myLinkedList.Add(20)");
-            myLinkedList.Add(20);
-
-            Console.WriteLine("myLinkedList currently is at: ");
-            myLinkedList.PrintAll();
-
-            Node lastValue = myLinkedList.GetLastValue();
+            Node lastValue = EstablishTheLinkedList().GetLastValue();
             Console.WriteLine($"\nThe last value myLinkedList is: {lastValue._value}");
 
+        }
+
+        // I didn't want to keep writing the same instance 
+        // on each of the methods within gptLINKED 
+        // so I did this method to do that for me and then return a 
+        // SinglyLinkedList
+        private SinglyLinkedList EstablishTheLinkedList() 
+        {
+            SinglyLinkedList establishedList = new SinglyLinkedList();
+
+            Console.WriteLine("Starting to create the Linked List");
+
+            Console.WriteLine("\nFirst call is myLinkedList.Add(5)");
+            establishedList.Add(5);
+
+            Console.WriteLine("\nSecond call is myLinkedList.Add(10)");
+            establishedList.Add(10);
+
+            Console.WriteLine("\nThird call is myLinkedList.Add(20)");
+            establishedList.Add(20);
+
+            return establishedList;
         }
     }
 
@@ -88,7 +69,7 @@ namespace ChatChallenges
                 return;
             }
 
-            // Step 3. If the list isn't empty then we create a reference (or a pointer?)
+            // Step 3. If the list isn't empty then we create a reference
             Node current = _head;
             // This will only run if ._next has a Node object 
             while (current._next != null) 
@@ -98,8 +79,7 @@ namespace ChatChallenges
                 // Like so: 
                 // Node:
                 // [
-                //  {value: 5, next:
-                //              {value: 10, next: null}},
+                //  {value: 5, next: ---pointer/reference---> {value: 10, next: null}},
                 //  {value: 10, next: null}
                 // ]
                 current = current._next;
@@ -121,6 +101,7 @@ namespace ChatChallenges
             }
         }
 
+        // You're just getting the last value in the list
         public Node GetLastValue() 
         {
             if (_head == null)
@@ -129,13 +110,23 @@ namespace ChatChallenges
                 return null;
             }
 
+            // When we get to here,
+            // Then there is already an object in memory called "_head"
+            // So we create a reference to point to that memory spot 
+            // But "current" isn't a copy of "_head" it's just a reference, a pointer. 
             Node current = _head;
 
             while (current._next != null) 
             {
+                // This is what moves the list forward 
+                // Remember ._next at this point already exists in memory 
+                // Due to us assigning current to "_head" 
                 current = current._next;
             }
 
+            // And since we just want the last time of the list
+            // we just need the list to get to the end with that while loop 
+            // and then just return it. 
             return current;
         }
     }
