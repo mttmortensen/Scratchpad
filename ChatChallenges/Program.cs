@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLISTS_053025.GettingInputAndDisplayingLargestNumber();
+        gptLINKED_053125.ShowSinglyLinkedLists();
         Console.ReadLine();
     }
 }
