@@ -10,7 +10,7 @@ namespace ChatChallenges
     {
         SinglyLinkedList myLinkedList = new SinglyLinkedList();
 
-        public void ShowSinglyLinkedLists() 
+        public void ShowSinglyLinkedLists()
         {
             myLinkedList = EstablishTheLinkedList();
             Console.WriteLine("\nmyLinkedList ends at: ");
@@ -18,18 +18,38 @@ namespace ChatChallenges
 
         }
 
-        public void ShowLastValueInALinkedList() 
+        public void ShowLastValueInALinkedList()
         {
             Node lastValue = EstablishTheLinkedList().GetLastValue();
             Console.WriteLine($"\nThe last value myLinkedList is: {lastValue._value}");
 
         }
 
+        public void GetInputAndCheckForNumber()
+        {
+            SinglyLinkedList myLinkedList = EstablishTheLinkedList();
+
+            Console.WriteLine("Enter a Number and we'll see if it's in the existing list");
+            int targetNum = int.Parse(Console.ReadLine());
+
+            bool succes = myLinkedList.Contains(targetNum);
+
+            if (succes) 
+            {
+                Console.WriteLine($"Your number, {targetNum}, was in the List!");
+            }
+
+            else
+            {
+                Console.WriteLine("Not finding a match :( ");
+            }
+        }
+
         // I didn't want to keep writing the same instance 
         // on each of the methods within gptLINKED 
         // so I did this method to do that for me and then return a 
         // SinglyLinkedList
-        private SinglyLinkedList EstablishTheLinkedList() 
+        private SinglyLinkedList EstablishTheLinkedList()
         {
             SinglyLinkedList establishedList = new SinglyLinkedList();
 
@@ -46,6 +66,8 @@ namespace ChatChallenges
 
             return establishedList;
         }
+
+
     }
 
     public class SinglyLinkedList

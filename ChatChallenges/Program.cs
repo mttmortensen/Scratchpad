@@ -6,7 +6,7 @@ internal class Program
     {
         gptLINKED_053125 gptLINKED = new gptLINKED_053125();
 
-        gptLINKED.ShowLastValueInALinkedList();
+        gptLINKED.GetInputAndCheckForNumber();
         Console.ReadLine();
     }
 }
