@@ -152,6 +152,8 @@ namespace ChatChallenges
             return current;
         }
 
+        // Seeing if a number is within the List 
+        // Done with user input
         public bool Contains(int targetNum) 
         {
             Node current = _head;
