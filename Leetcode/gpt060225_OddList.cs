@@ -11,7 +11,10 @@ namespace Leetcode
 
         public static List<int> RemoveAllOddNumbersFromAList(List<int> targetListOfNums) 
         {
-            return new List<int>();
+            List<int> oddsOnly = new List<int>();
+
+
+            return oddsOnly;
         }
     }
 }
