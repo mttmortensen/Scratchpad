@@ -12,6 +12,15 @@ namespace Leetcode
         {
             List<int> combinedList = new List<int>();
 
+            foreach (int numOne in listOne) 
+            {
+                combinedList.Add(numOne);
+            }
+
+            foreach (int numTwo in listTwo)
+            {
+                combinedList.Add(numTwo);
+            }
 
             return combinedList;
         }
