@@ -8,13 +8,19 @@ namespace Leetcode
 {
     public class gpt060225_OddList
     {
-
         public static List<int> RemoveAllOddNumbersFromAList(List<int> targetListOfNums) 
         {
-            List<int> oddsOnly = new List<int>();
+            List<int> evensOnly = new List<int>();
 
+            foreach (int num in targetListOfNums) 
+            {
+                if (num % 2 == 0) 
+                {
+                    evensOnly.Add(num);
+                }
+            }
 
-            return oddsOnly;
+            return evensOnly;
         }
     }
 }
