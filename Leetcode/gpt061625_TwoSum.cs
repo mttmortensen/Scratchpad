@@ -8,5 +8,9 @@ namespace Leetcode
 {
     public class gpt061625_TwoSum
     {
+        public static bool TwoSum(List<int> list, int target) 
+        {
+            return false;
+        }
     }
 }
