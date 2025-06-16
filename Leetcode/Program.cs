@@ -5,14 +5,13 @@
         static void Main(string[] args)
         {
 
-            List<int> listOne = new List<int> { 1, 3, 4, 6 };
-            List<int> listTwo = new List<int> { 2, 5, 7, 8 };
+            List<int> listOne = new List<int> { 1, 3, 3, 4, 2, 1, 5, 2 };
 
-            List<int> mergedList = gpt060525_MergeList.MergeTwoListsIntoOneList(listOne, listTwo);
+            List<int> removeDuplicates = gpt061525_DuplicateList.RemoveDuplicates(listOne);
 
-            foreach (int num in mergedList)
+            foreach (int num in removeDuplicates)
             {
-                Console.WriteLine($"[{num} ");
+                Console.Write($"[{num} ");
             }
             
 

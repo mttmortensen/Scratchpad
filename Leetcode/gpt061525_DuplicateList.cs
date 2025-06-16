@@ -10,7 +10,17 @@ namespace Leetcode
     {
         public static List<int> RemoveDuplicates(List<int> originalList) 
         {
-            return new List<int>();
+            List<int> newList = new List<int>();
+
+           foreach(int item in originalList) 
+            {
+                if (!newList.Contains(item)) 
+                {
+                    newList.Add(item);
+                }
+            }
+
+            return newList;
         }
     }
 }
