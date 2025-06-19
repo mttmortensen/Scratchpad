@@ -10,23 +10,20 @@ namespace Leetcode
     {
         public static bool TwoSum(List<int> list, int target) 
         {
-            bool isEquals = false;
-
             int currentNumber;
 
-            foreach(int num in list) 
+            foreach(int num1 in list) 
             {
-                currentNumber = num; 
-
-                if (currentNumber + num == target) 
+                foreach(int num2 in list) 
                 {
-                    currentNumber = 0;
-                    isEquals = true;
-                    return isEquals;
+                    if (list.IndexOf(num1) != list.IndexOf(num2) && num1 + num2 == target) 
+                    {
+                        return true;
+                    }
                 }
             }
 
-            return isEquals;
+            return false;
         }
     }
 }
