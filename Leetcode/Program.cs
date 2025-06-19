@@ -6,7 +6,7 @@
         {
 
             List<int> list = new List<int> { 2, 7, 11, 15 };
-            int target = 18;
+            int target = 666;
 
             bool targetMet = gpt061625_TwoSum.TwoSum(list, target);
 
