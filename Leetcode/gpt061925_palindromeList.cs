@@ -12,14 +12,12 @@ namespace Leetcode
         {
             char[] brokenupString = input.ToCharArray();
 
-            for(int i = 0; i < brokenupString.Length; i++) 
+            for(int i = 0; i < input.Length; i++) 
             {
-                for(int j = 0; j < brokenupString.Length - 1; j++) 
+                if (input[i] == input[input.Length -1 - i]) 
                 {
-                    if (Char.IsLetterOrDigit(brokenupString[i]) && brokenupString[i] == brokenupString[j]) 
-                    {
-                        return true;
-                    }
+                    Console.Write($"{input[i]}");
+                    return true;
                 }
             }
 
