@@ -5,14 +5,15 @@
         static void Main(string[] args)
         {
 
-            List<int> listOne = new List<int> { 1, 3, 3, 4, 2, 1, 5, 2 };
+            List<int> list = new List<int> { 2, 7, 11, 15 };
+            int target = 9;
 
-            List<int> removeDuplicates = gpt061525_DuplicateList.RemoveDuplicates(listOne);
+            bool targetMet = gpt061625_TwoSum.TwoSum(list, target);
 
-            foreach (int num in removeDuplicates)
-            {
-                Console.Write($"[{num} ");
-            }
+            Console.WriteLine($"The list you entered was: {list}");
+            Console.WriteLine($"The target was: {target}");
+            Console.WriteLine($"Do any of those numbers in the list add up to the target?");
+            Console.WriteLine($"Answer: {targetMet}");
             
 
             Console.ReadKey();

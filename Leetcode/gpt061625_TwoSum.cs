@@ -10,7 +10,23 @@ namespace Leetcode
     {
         public static bool TwoSum(List<int> list, int target) 
         {
-            return false;
+            bool isEquals = false;
+
+            int currentNumber;
+
+            foreach(int num in list) 
+            {
+                currentNumber = num; 
+
+                if (currentNumber + num == target) 
+                {
+                    currentNumber = 0;
+                    isEquals = true;
+                    return isEquals;
+                }
+            }
+
+            return isEquals;
         }
     }
 }
