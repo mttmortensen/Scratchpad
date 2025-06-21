@@ -4,10 +4,7 @@
     {
         static void Main(string[] args)
         {
-            string input = "racecar";
-
-            bool result = gpt061925_palindromeList.IsPalindrome(input);
-            Console.WriteLine(result);
+            gpt062125_countdownList.Countdown(5);
             Console.ReadKey();
         }
     }

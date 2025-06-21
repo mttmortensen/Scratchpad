@@ -8,6 +8,13 @@ namespace Leetcode
 {
     public class gpt062125_countdownList
     {
-        public static void Countdown(int start) { }
+        public static void Countdown(int start) 
+        {
+            while (start >= 0) 
+            {
+                Console.WriteLine($"{start}");
+                start--;
+            }
+        }
     }
 }
