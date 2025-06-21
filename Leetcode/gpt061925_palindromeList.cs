@@ -8,6 +8,7 @@ namespace Leetcode
 {
     public static class gpt061925_palindromeList
     {
+        // FAILED but don''t wanna figure it out.
         public static bool IsPalindrome(string input) 
         {
             char[] brokenupString = input.ToCharArray();
