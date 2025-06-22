@@ -45,5 +45,35 @@ namespace ChatChallenges
 
             Console.WriteLine($"Total is: {total}");
         }
+
+        public static void BuildListFromInput() 
+        {
+            Console.WriteLine("Enter words until you type 'done' and I'll build a list out of it");
+
+            Console.Write("Enter a word:");
+            string input = Console.ReadLine();
+
+            if (input == "done") 
+            {
+                Console.WriteLine("You didn't enter any words, see ya");
+                return;
+            }
+
+            List<string> listOfWords = new List<string>();
+            
+            while (input.ToLower() != "done") 
+            {
+                listOfWords.Add(input);
+                Console.Write("Enter a word:");
+                input = Console.ReadLine();
+            }
+
+            Console.WriteLine("You entered:");
+
+            foreach (string word in listOfWords) 
+            {
+                Console.WriteLine($"{word}");
+            }
+        }
     }
 }
