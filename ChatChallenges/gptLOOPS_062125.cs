@@ -21,5 +21,29 @@ namespace ChatChallenges
 
             Console.WriteLine("Even number entered. Loop stopped.");
         }
+
+        public static void SumUntilZero() 
+        {
+            int total = 0;
+
+            Console.WriteLine("Enter numbers to get a total of it, enter 0 to exit");
+
+            Console.WriteLine("Enter a number:");
+            int num = int.Parse(Console.ReadLine());
+
+            if (num == 0) 
+            {
+                Console.WriteLine("Exiting...");
+            }
+
+            while (num != 0) 
+            {
+                total += num;
+                Console.WriteLine("Enter a number:");
+                num = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine($"Total is: {total}");
+        }
     }
 }
