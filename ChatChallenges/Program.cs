@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        gptLOOPS_062125.BuildListFromInput(); 
+        gptLISTS_062225.ListInputForCounting(); 
 
         Console.ReadLine();
     }
