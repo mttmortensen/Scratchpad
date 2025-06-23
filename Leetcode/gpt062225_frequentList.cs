@@ -8,5 +8,9 @@ namespace Leetcode
 {
     public class gpt062225_frequentList
     {
+        public static char MostFrequetCharacterListed(string str) 
+        {
+            return '\0';
+        }
     }
 }
