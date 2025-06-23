@@ -8,11 +8,28 @@ namespace Leetcode
 {
     public class gpt062225_nestedListss
     {
-        public static int MaximumWealth(List<List<int>> accounts) 
+        public static int MaximumWealth(List<List<int>> accounts)
         {
-            int totalWealth = 0;
+            int amountOfWealthiestPerson = 0;
 
-            return totalWealth;
+
+            for (int i = 0; i < accounts.Count; i++)
+            {
+                int currentWealthiestAccount = 0;
+
+                for (int j = 0; j < accounts[i].Count; j++) 
+                {
+                    currentWealthiestAccount += accounts[i][j];
+                }
+
+                if (currentWealthiestAccount > amountOfWealthiestPerson)
+                {
+                    amountOfWealthiestPerson = currentWealthiestAccount;
+                }
+
+            }
+
+            return amountOfWealthiestPerson;
         }
     }
 }
