@@ -4,15 +4,14 @@
     {
         static void Main(string[] args)
         {
-            string str = Console.ReadLine();
-
-            Dictionary<char, int> results = gpt062225_frequentList.MostFrequetCharacterListed(str);
-
-            foreach(KeyValuePair<char,int> item in results) 
+            List<int> values = new List<int>() 
             {
-                Console.WriteLine($"Highest letter was {item.Key} at {item.Value} ");
-            }
+                12, 355545, 222, 26, 7896
+            };
 
+            int result = gpt062525_evenNumbersList.FindNumberswithEvenNumbersOfDigits(values);
+
+            Console.WriteLine(result);
 
             Console.ReadKey();
         }
