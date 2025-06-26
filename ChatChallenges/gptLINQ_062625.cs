@@ -17,5 +17,10 @@ namespace ChatChallenges
         {
             return strings.Select(s => s[0].ToString().ToUpper() + s.Substring(1));
         }
+
+        public static IEnumerable<int> GetTop3LargestNumbers(List<int> nums) 
+        {
+            return nums.OrderBy(n => n).Reverse().Take(3);
+        }
     }
 }

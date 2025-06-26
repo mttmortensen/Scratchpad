@@ -4,13 +4,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<string> strings = new List<string> { "dog", "cat", "bird" };
+        List<int> nums = new List<int>() { 1, 4, 3, 5, 28, 222, 2431 };
 
-        IEnumerable<string> results = gptLINQ_062625.CapitalizeAllStrings(strings);
-
-        foreach (string str in results) 
+        IEnumerable<int> results = gptLINQ_062625.GetTop3LargestNumbers(nums);
+        foreach (int num in results) 
         {
-            Console.WriteLine(str);
+            Console.WriteLine(num);
         }
 
         Console.ReadLine();
