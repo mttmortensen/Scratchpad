@@ -12,5 +12,10 @@ namespace ChatChallenges
         {
             return numbers.Where(n => n % 2 == 0);
         }
+
+        public static IEnumerable<string> CapitalizeAllStrings(List<string> strings) 
+        {
+            return strings.Select(s => s[0].ToString().ToUpper() + s.Substring(1));
+        }
     }
 }

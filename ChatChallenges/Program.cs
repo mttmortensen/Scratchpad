@@ -4,13 +4,13 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<int> nums = new List<int>() { 1, 4, 3, 5, 28, 222, 2431 };
+        List<string> strings = new List<string> { "dog", "cat", "bird" };
 
-        IEnumerable<int> results = gptLINQ_062625.FindAllEvenNumbers(nums);
+        IEnumerable<string> results = gptLINQ_062625.CapitalizeAllStrings(strings);
 
-        foreach (int num in results) 
+        foreach (string str in results) 
         {
-            Console.WriteLine(num);
+            Console.WriteLine(str);
         }
 
         Console.ReadLine();
