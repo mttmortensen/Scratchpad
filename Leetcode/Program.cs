@@ -6,12 +6,15 @@
         {
             List<int> values = new List<int>() 
             {
-                12, 355545, 222, 26, 7896
+                8, 1, 2, 2, 3
             };
 
-            int result = gpt062525_evenNumbersList.FindNumberswithEvenNumbersOfDigits(values);
+            List<int> results = gpt062625_indexAtList.SmallerNumbersThanCurrent(values);
 
-            Console.WriteLine(result);
+            foreach (int num in results)
+            {
+                Console.WriteLine(num);
+            }
 
             Console.ReadKey();
         }

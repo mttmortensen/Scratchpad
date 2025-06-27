@@ -10,7 +10,21 @@ namespace Leetcode
     {
         public static List<int> SmallerNumbersThanCurrent(List<int> nums) 
         {
-            return new List<int>() { };
+            List<int> countingValuesOfOriginalList = new List<int>();
+
+            for (int i = 0; i < nums.Count; i++) 
+            {
+                countingValuesOfOriginalList.Add(0);
+
+                for (int j = 0; j < nums.Count; j++)
+                {
+                    if (nums[i] > nums[j]) 
+                    {
+                        countingValuesOfOriginalList[i]++;
+                    }
+                }
+            }
+            return countingValuesOfOriginalList;
         }
     }
 }
