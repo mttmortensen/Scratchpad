@@ -8,5 +8,9 @@ namespace ChatChallenges
 {
     public class gptLINQ_063025
     {
+        public static int CountStringsLongerThan5Characters(IEnumerable<string> words) 
+        {
+            return words.Count(w => w.Length > 5);
+        }
     }
 }
