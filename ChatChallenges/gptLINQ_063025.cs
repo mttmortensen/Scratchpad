@@ -12,5 +12,10 @@ namespace ChatChallenges
         {
             return words.Count(w => w.Length > 5);
         }
+
+        public static string FindingTheLongestWord(IEnumerable<string> words) 
+        {
+            return words.OrderByDescending(w => w.Length).FirstOrDefault();
+        }
     }
 }
