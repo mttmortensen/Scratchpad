@@ -17,5 +17,10 @@ namespace ChatChallenges
         {
             return words.OrderByDescending(w => w.Length).FirstOrDefault();
         }
+
+        public static IEnumerable<int> MultiplyAllNumbersByTheirIndex(IEnumerable<int> nums) 
+        {
+            return nums.Select((value, index) => value * index);
+        }
     }
 }
