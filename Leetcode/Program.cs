@@ -6,14 +6,16 @@
         {
             List<int> values = new List<int>() 
             {
-                8, 1, 2, 2, 3
+                1, 3, 2, 6, -1, 4, 1, 8, 2
             };
 
-            List<int> results = gpt062625_indexAtList.SmallerNumbersThanCurrent(values);
+            int k = 5;
 
-            foreach (int num in results)
+            List<double> results = gpt063025_slidingWindow.FindAverageSizeOfSubSizeArray(values, k);
+
+            foreach(double num in results) 
             {
-                Console.WriteLine(num);
+                Console.WriteLine($"{num}");
             }
 
             Console.ReadKey();
