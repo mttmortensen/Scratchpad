@@ -18,6 +18,9 @@ namespace HttpClientChallenges
             };
         }
 
-
+        public async Task<string> GetStringAsync(int id) 
+        {
+            return string.Empty;
+        }
     }
 }
