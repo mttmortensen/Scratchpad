@@ -17,11 +17,14 @@ namespace HttpClientChallenges
             };
         }
 
-        public void Get() 
+        public async Task Get() 
         {
             using(HttpClient client = new HttpClient()) 
             {
-                client.GetAsync(client.BaseAddress);
+                var response = await client.GetAsync(client.BaseAddress);
+                string results = await response.Content.ReadAsStringAsync();
+
+                client.Dispose();
             }
         }
     }
