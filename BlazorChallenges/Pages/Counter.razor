@@ -2,17 +2,28 @@
 
 <PageTitle>Counter</PageTitle>
 
+<input @bind="name" />
+
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status"> Hello, @name! Your current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Increase by 5</button>
+<button class="btn btn-primary" @onclick="Reset">Reset me</button>
 
 @code {
+
+    private string name = ""; 
+
     private int currentCount = 0;
 
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount+= 5;
+    }
+
+    private void Reset()
+    {
+        currentCount = 0;
     }
 }
