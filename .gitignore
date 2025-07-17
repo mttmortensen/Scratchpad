@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# BlazorChallenges - Dont need every foler
+BlazorChallenges/wwwroot
+BlazorChallenges/BlazorChallenges.csproj
+BlazorChallenges/_Imports.razor
+*/launchSettings.json
