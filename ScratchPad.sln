@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatChallenges", "ChatChall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientChallenges", "HttpClientChallenges\HttpClientChallenges.csproj", "{2A46DB90-25C6-46AB-BAA3-FB46C3CD2A96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorChallenges", "BlazorChallenges\BlazorChallenges.csproj", "{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2A46DB90-25C6-46AB-BAA3-FB46C3CD2A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A46DB90-25C6-46AB-BAA3-FB46C3CD2A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A46DB90-25C6-46AB-BAA3-FB46C3CD2A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
