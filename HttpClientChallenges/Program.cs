@@ -2,16 +2,18 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Enter a Id to get a Star Wars Character: ");
             int charId = Int32.Parse(Console.ReadLine());
 
-            HttpStarWars starClient = new HttpStarWars("https://swapi.dev/api/people/");
+            HttpStarWars starClient = new HttpStarWars("http://swapi.info/api/people/");
 
-            Task<string> results = starClient.GetStringAsync(charId);
+            string results = await starClient.GetStringAsync(charId);
 
-            Console.WriteLine($"Here's your Star Wars Character: {results}");
+            Console.WriteLine($"Here's your Star Wars Character: \n{results}");
+
+            Console.ReadLine();
         }
     }
 }
