@@ -366,4 +366,4 @@ FodyWeavers.xsd
 BlazorChallenges/wwwroot
 BlazorChallenges/BlazorChallenges.csproj
 BlazorChallenges/_Imports.razor
-*/launchSettings.json
+BlazorChallenges/Properties/launchSettings.json
