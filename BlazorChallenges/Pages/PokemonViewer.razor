@@ -1,0 +1,33 @@
+﻿@page "/pokemon"
+
+<PageTitle>Pokemon Viewer</PageTitle>
+
+<h1>Pokemon</h1>
+
+<p>Enter a Pokemon Id:</p>
+<br/> 
+<input type="text" @bind="pokeId" />
+<button class="btn btn-primary" @onclick="GetPokeById">Search</button>
+
+@if (currentPokemon != null)
+{
+	<div>
+		<p>Name: @currentPokemon.Name</p>
+		<p>Exp Base: @currentPokemon.BaseExperience</p>
+		<img src="@currentPokemon.Sprites.Front_Default" />
+	</div>
+} 
+
+
+@inject HttpClient Http
+@code {
+
+	private string? pokeId;
+	private Pokemon? currentPokemon;
+
+	private async Task GetPokeById()
+	{
+		currentPokemon = await Http.GetFromJsonAsync<Pokemon>("https://pokeapi.co/api/v2/pokemon/" + pokeId);
+
+	}
+}
