@@ -1,6 +1,11 @@
 ﻿@foreach(ApiLink link in ApiLinks)
 {
-	<a href="@link.Url" target="_blank">@link.Name</a>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@link.Name</h5>
+            <a href="@link.Url" target="_blank" class="btn btn-primary">Open Swagger UI</a>
+        </div>
+    </div>
 }
 
 @code {
