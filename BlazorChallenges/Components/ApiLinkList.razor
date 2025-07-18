@@ -1,0 +1,8 @@
+﻿@foreach(ApiLink link in ApiLinks)
+{
+	<a href="@link.Url" target="_blank">@link.Name</a>
+}
+
+@code {
+	[Parameter] public List<ApiLink> ApiLinks { get; set; } = new();
+}
