@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace HttpClientChallenges
 {
-    internal class HttpBlogPost
+    public class HttpBlogPost
     {
+        private readonly HttpClient _client;
+
+        public HttpBlogPost(string url)
+        {
+            _client = new HttpClient() 
+            {
+                BaseAddress = new Uri(url)
+            };
+        }
+
+        public async Task PostBlogPost(Dictionary<string, string> blogPost) 
+        {
+
+        }
     }
 }
