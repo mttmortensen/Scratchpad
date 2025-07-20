@@ -6,9 +6,9 @@
         {
             HttpBlogPost blog = new HttpBlogPost("https://jsonplaceholder.typicode.com/");
 
-            var content = blog.PostBlogPost("Some Title", "Some body");
+            var content = await blog.PostBlogPost("Some Title", "Some body");
 
-            Console.WriteLine(content);
+            Console.WriteLine(content.Title, content.Id);
 
             Console.ReadLine();
         }

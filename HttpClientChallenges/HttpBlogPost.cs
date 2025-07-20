@@ -21,22 +21,29 @@ namespace HttpClientChallenges
 
         public async Task<string?> PostBlogPost(string title, string body) 
         {
-            var blogPost = new Dictionary<string, string>() 
+            var blogPost = new BlogPost()
             {
-                { "Title:", title },
-                { "Body:", body }
+                Title = title,
+                Body = body
             };
 
-            string jsonString = JsonSerializer.Serialize(blogPost);
+            string jsonString = JsonSerializer.Serialize<BlogPost>(blogPost);
 
             HttpContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-            var response = await _client.PostAsync("post", content);
+            var response = await _client.PostAsync("posts", content);
 
             var stringsAsync = await response.Content.ReadAsStringAsync();
 
             return stringsAsync;
             
         }
+    }
+
+    public class BlogPost 
+    {
+        public int? Id { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
     }
 }
