@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientChallenges", "Htt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorChallenges", "BlazorChallenges\BlazorChallenges.csproj", "{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramChallenges", "ProgramChallenges\ProgramChallenges.csproj", "{493BB75D-DE1C-6745-4C45-D092A666009F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1E2ED91-7B44-4F8B-B1D2-20405BB5637F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{493BB75D-DE1C-6745-4C45-D092A666009F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493BB75D-DE1C-6745-4C45-D092A666009F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493BB75D-DE1C-6745-4C45-D092A666009F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493BB75D-DE1C-6745-4C45-D092A666009F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
