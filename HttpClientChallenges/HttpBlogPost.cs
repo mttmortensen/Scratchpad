@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace HttpClientChallenges
@@ -18,9 +19,24 @@ namespace HttpClientChallenges
             };
         }
 
-        public async Task PostBlogPost(Dictionary<string, string> blogPost) 
+        public async Task<string?> PostBlogPost(string title, string body) 
         {
+            var blogPost = new Dictionary<string, string>() 
+            {
+                { "Title:", title },
+                { "Body:", body }
+            };
 
+            string jsonString = JsonSerializer.Serialize(blogPost);
+
+            HttpContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await _client.PostAsync("post", content);
+
+            var stringsAsync = await response.Content.ReadAsStringAsync();
+
+            return stringsAsync;
+            
         }
     }
 }

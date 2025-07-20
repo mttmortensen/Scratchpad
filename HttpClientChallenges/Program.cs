@@ -4,14 +4,11 @@
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Enter a Id to get a Star Wars Character: ");
-            int charId = Int32.Parse(Console.ReadLine());
+            HttpBlogPost blog = new HttpBlogPost("https://jsonplaceholder.typicode.com/");
 
-            HttpStarWars starClient = new HttpStarWars("http://swapi.info/api/people/");
+            var content = blog.PostBlogPost("Some Title", "Some body");
 
-            string results = await starClient.GetStringAsync(charId);
-
-            Console.WriteLine($"Here's your Star Wars Character: \n{results}");
+            Console.WriteLine(content);
 
             Console.ReadLine();
         }
