@@ -44,7 +44,7 @@ namespace HttpClientChallenges
             string responseJson = await response.Content.ReadAsStringAsync();
 
             // Now deserialize (convert) into TodoItem 
-            TodoItem createdItem = JsonSerializer.Deserialize<TodoItem>(responseJson, new JsonSerializerOptions 
+            TodoItem? createdItem = JsonSerializer.Deserialize<TodoItem>(responseJson, new JsonSerializerOptions 
             {
                 // Important for match JSON keys
                 PropertyNameCaseInsensitive = true 
@@ -57,7 +57,7 @@ namespace HttpClientChallenges
     public class TodoItem 
     {
         public int? Id { get; set; }
-        public string Title { get; set; }
+        public string? Title { get; set; }
         public bool Completed { get; set; }
     }
 }

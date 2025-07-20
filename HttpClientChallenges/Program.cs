@@ -6,13 +6,13 @@
         {
 
             Console.WriteLine("Enter your Todo Item title: ");
-            string title = Console.ReadLine();
+            string? title = Console.ReadLine();
 
             Console.WriteLine("Has it been completed? (True/False)");
             bool done = bool.Parse(Console.ReadLine());
 
             HttpToDoPost todo = new HttpToDoPost("https://jsonplaceholder.typicode.com/");
-            TodoItem item = await todo.PostToDoItem(title, done);
+            TodoItem? item = await todo.PostToDoItem(title, done);
 
             if(item.Completed)
             {
