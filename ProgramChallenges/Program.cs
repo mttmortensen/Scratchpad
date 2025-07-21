@@ -10,7 +10,11 @@ var app = builder.Build();
 // MapGet adds '/' to the end of our base URL (localhost)
 // Which is determined in launchSettings.json
 // In this example it would return "Hello World" at the root URL (/)
-app.MapGet("/", () => "Hello World!");
+// app.MapGet("/", () => "Hello World!");
+
+// ProgramDayX is going to be a set of static classes to help
+// with having multiple top-level statements.
+ProgramDay1.Run(args);
 
 // This runs the app on a web server (Kestrel)
 // This blocks the main thread and listens for requests
