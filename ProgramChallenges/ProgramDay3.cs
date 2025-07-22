@@ -10,6 +10,18 @@
             // 1. Custom middleware (runs on every request)
             app.Use(async (context, next) => 
             {
+
+                // Challenge from Chat: 
+                if (context.Request.Path == "/block") 
+                {
+                    context.Response.StatusCode = 403;
+                    Console.WriteLine($"[Middleware] Response Status: {context.Response.StatusCode}");
+                    await context.Response.WriteAsync("Access Denied");
+                    
+                    // Doesn't call next
+                    return; 
+                }
+
                 Console.WriteLine($"[Middleware] Request: {context.Request.Method} {context.Request.Path}");
                 // It sends control to the next middleware in the pipeline. 
                 await next.Invoke();
