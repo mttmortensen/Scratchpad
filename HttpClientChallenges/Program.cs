@@ -4,8 +4,7 @@
     {
         static async Task Main(string[] args)
         {
-            HttpToDo todo = new HttpToDo("https://jsonplaceholder.typicode.com/");
-
+            HttpToDoUpdate todo = new HttpToDoUpdate("https://jsonplaceholder.typicode.com/");
 
             Console.WriteLine("Enter the ID to update a ToDo Item: ");
             int Id = int.Parse(Console.ReadLine());
