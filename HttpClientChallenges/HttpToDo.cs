@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace HttpClientChallenges
 {
-    public class HttpToDoPost
+    public class HttpToDo
     {
         private readonly HttpClient _client;
 
-        public HttpToDoPost(string url)
+        public HttpToDo(string url)
         {
             _client = new HttpClient() 
             {
@@ -35,7 +35,7 @@ namespace HttpClientChallenges
             HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             // Send the POST await request
-            var response = await _client.PostAsync("posts", content);
+            var response = await _client.PostAsync("todos", content);
 
             // Ensure a successfull response is made
             response.EnsureSuccessStatusCode();
@@ -51,6 +51,40 @@ namespace HttpClientChallenges
             });
 
             return createdItem;
+        }
+
+        public async Task<TodoItem> UpdateToDoItem(int id, TodoItem item) 
+        {
+            // Create the updated ToDo
+            TodoItem updatedTodo = new TodoItem()
+            {
+                Title = item.Title,
+                Completed = item.Completed
+            };
+
+            // Serialize the item with json 
+            string json = JsonSerializer.Serialize(updatedTodo);
+
+            // Wrap it in stringContent for HttpContent to be happy
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // Send the PUT await request
+            var response = await _client.PutAsync("todos", content);
+
+            // Ensure a successfull response is made
+            response.EnsureSuccessStatusCode();
+
+            // Read the raw JSON response (await)
+            string responseJson = await response.Content.ReadAsStringAsync();
+
+            // Now deserialize (convert) into TodoItem 
+            TodoItem? updatedItem = JsonSerializer.Deserialize<TodoItem>(responseJson, new JsonSerializerOptions
+            {
+                // Important for match JSON keys
+                PropertyNameCaseInsensitive = true
+            });
+
+            return updatedItem;
         }
     }
 
