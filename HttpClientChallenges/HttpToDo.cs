@@ -19,10 +19,10 @@ namespace HttpClientChallenges
             };
         }
 
-        public async Task<TodoItem?> PostToDoItem(string title, bool done) 
+        public async Task<ToDoItem?> PostToDoItem(string title, bool done) 
         {
             // Build the item for POST
-            TodoItem item = new TodoItem()
+            ToDoItem item = new ToDoItem()
             {
                 Title = title,
                 Completed = done
@@ -43,8 +43,8 @@ namespace HttpClientChallenges
             // Read the raw JSON response (await)
             string responseJson = await response.Content.ReadAsStringAsync();
 
-            // Now deserialize (convert) into TodoItem 
-            TodoItem? createdItem = JsonSerializer.Deserialize<TodoItem>(responseJson, new JsonSerializerOptions 
+            // Now deserialize (convert) into ToDoItem 
+            ToDoItem? createdItem = JsonSerializer.Deserialize<ToDoItem>(responseJson, new JsonSerializerOptions 
             {
                 // Important for match JSON keys
                 PropertyNameCaseInsensitive = true 
@@ -53,10 +53,10 @@ namespace HttpClientChallenges
             return createdItem;
         }
 
-        public async Task<TodoItem> UpdateToDoItem(int id, TodoItem item) 
+        public async Task<ToDoItem> UpdateToDoItem(int id, ToDoItem item) 
         {
             // Create the updated ToDo
-            TodoItem updatedTodo = new TodoItem()
+            ToDoItem updatedTodo = new ToDoItem()
             {
                 Title = item.Title,
                 Completed = item.Completed
@@ -69,7 +69,7 @@ namespace HttpClientChallenges
             HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             // Send the PUT await request
-            var response = await _client.PutAsync("todos", content);
+            var response = await _client.PutAsync($"todos/{id}", content);
 
             // Ensure a successfull response is made
             response.EnsureSuccessStatusCode();
@@ -77,8 +77,8 @@ namespace HttpClientChallenges
             // Read the raw JSON response (await)
             string responseJson = await response.Content.ReadAsStringAsync();
 
-            // Now deserialize (convert) into TodoItem 
-            TodoItem? updatedItem = JsonSerializer.Deserialize<TodoItem>(responseJson, new JsonSerializerOptions
+            // Now deserialize (convert) into ToDoItem 
+            ToDoItem? updatedItem = JsonSerializer.Deserialize<ToDoItem>(responseJson, new JsonSerializerOptions
             {
                 // Important for match JSON keys
                 PropertyNameCaseInsensitive = true
@@ -86,12 +86,5 @@ namespace HttpClientChallenges
 
             return updatedItem;
         }
-    }
-
-    public class TodoItem 
-    {
-        public int? Id { get; set; }
-        public string? Title { get; set; }
-        public bool Completed { get; set; }
     }
 }

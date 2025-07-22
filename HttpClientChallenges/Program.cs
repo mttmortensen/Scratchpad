@@ -4,24 +4,30 @@
     {
         static async Task Main(string[] args)
         {
+            HttpToDo todo = new HttpToDo("https://jsonplaceholder.typicode.com/");
 
-            Console.WriteLine("Enter your Todo Item title: ");
-            string? title = Console.ReadLine();
 
-            Console.WriteLine("Has it been completed? (True/False)");
-            bool done = bool.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the ID to update a ToDo Item: ");
+            int Id = int.Parse(Console.ReadLine());
 
-            HttpToDoPost todo = new HttpToDoPost("https://jsonplaceholder.typicode.com/");
-            TodoItem? item = await todo.PostToDoItem(title, done);
+            Console.WriteLine("Enter the updated Title: ");
+            string updatedTitle = Console.ReadLine();
 
-            if(item.Completed)
+            Console.WriteLine("Now update the status: (True/False)");
+            bool updatedStatus = bool.Parse(Console.ReadLine());
+
+            ToDoItem updatedBody = new ToDoItem() 
             {
-                Console.WriteLine($"Added! Todo Item: {item.Title}, has been completed");
-            }
-            else 
-            {
-                Console.WriteLine($"Added! Todo Item: {item.Title}, hasn't been completed yet");
-            }
+                Id = Id,
+                Title = updatedTitle,
+                Completed = updatedStatus
+            };
+
+            ToDoItem? updatedTodo = await todo.UpdateToDoItem(Id, updatedBody);
+
+            Console.WriteLine($"Updated! Todo Item: {updatedTodo.Title}");
+            Console.WriteLine($"\n Updated Status: {updatedTodo.Completed}");
+            Console.WriteLine($"\n Todo Item ID: {updatedTodo.Id}");
 
             Console.ReadLine();
         }
