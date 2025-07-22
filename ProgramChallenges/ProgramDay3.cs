@@ -8,8 +8,23 @@
             var app = builder.Build();
 
             // 1. Custom middleware (runs on every request)
+            app.Use(async (context, next) => 
+            {
+                Console.WriteLine($"[Middleware] Request: {context.Request.Method} {context.Request.Path}");
+                // It sends control to the next middleware in the pipeline. 
+                await next.Invoke();
+                Console.WriteLine($"[Middleware] Request Status: {context.Response.StatusCode}");
+            });
+
             // 2. App built-in middleware for routing 
+            // next.Invoke() would go to this middleware
+            // MapControllers() would be another middleware example
+            app.UseRouting();
+
             // 3. Add an endpoint
+            app.MapGet("/", () => "Hello from Day 3!");
+
+            app.Run();
         }
     }
 }
