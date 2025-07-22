@@ -21,7 +21,8 @@ namespace ProgramChallenges
             // ProgramDayX is going to be a set of static classes to help
             // with having multiple top-level statements.
             // ProgramDay1.Run(args);
-            ProgramDay2.Run(args);
+            // ProgramDay2.Run(args);
+            ProgramDay3.Run(args);
 
             // This runs the app on a web server (Kestrel)
             // This blocks the main thread and listens for requests

@@ -13,7 +13,7 @@
                 Console.WriteLine($"[Middleware] Request: {context.Request.Method} {context.Request.Path}");
                 // It sends control to the next middleware in the pipeline. 
                 await next.Invoke();
-                Console.WriteLine($"[Middleware] Request Status: {context.Response.StatusCode}");
+                Console.WriteLine($"[Middleware] Response Status: {context.Response.StatusCode}");
             });
 
             // 2. App built-in middleware for routing 
