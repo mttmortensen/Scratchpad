@@ -30,11 +30,14 @@ namespace HttpClientChallenges
             using JsonDocument doc = JsonDocument.Parse(json);
             JsonElement root = doc.RootElement;
 
-            string name = root.GetProperty("name").ToString();
-            string id = root.GetProperty("id").ToString();
-            string base_experience = root.GetProperty("base_experience").ToString();
+            Pokemon poke = new Pokemon()
+            {
+                Name = root.GetProperty("name").ToString(),
+                Id = root.GetProperty("id").ToString(),
+                Base_Experience = root.GetProperty("base_experience").ToString()
+            };
 
-            return $"Pokemon: {name}, ID: {id}, Base Experience: {base_experience}";
+            return $"Pokemon: {poke.Name}, ID: {poke.Id}, Base Experience: {poke.Base_Experience}";
         }
 
         public async Task<string> GetDetailedPokemonInfo(string pokeName) 
@@ -67,5 +70,7 @@ namespace HttpClientChallenges
                 return $"Pokemon: {name} (ID: {id})\n Base Experience: {base_experience}\n Height: {height}\n Weight: {weight}";
             };
         }
+
+        public async Task 
     }
 }
