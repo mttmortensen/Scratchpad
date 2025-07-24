@@ -20,6 +20,7 @@ namespace HttpClientChallenges
             };
         }
 
+        // **************** CHALLENGE 1 **************** // 
         public async Task<string> GetBasicPokemonInfo(string pokeName) 
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
@@ -44,6 +45,7 @@ namespace HttpClientChallenges
             return $"Pokemon: {poke.Name}, ID: {poke.Id}, Base Experience: {poke.Base_Experience}";
         }
 
+        // **************** CHALLENGE 2 **************** //
         public async Task<string> GetDetailedPokemonInfo(string pokeName) 
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
@@ -82,6 +84,7 @@ namespace HttpClientChallenges
             };
         }
 
+        // **************** CHALLENGE 3 **************** //
         private async Task<Pokemon> GetPokemonAbilities(string pokeName) 
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
@@ -114,5 +117,9 @@ namespace HttpClientChallenges
                 Console.WriteLine($"More Info: {abilitySlot.Ability.URL}");
             }
         }
+
+        // **************** CHALLENGE 4 **************** //
+
+        // **************** CHALLENGE 5 **************** //
     }
 }
