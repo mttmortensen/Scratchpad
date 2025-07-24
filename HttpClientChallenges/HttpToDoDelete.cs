@@ -18,6 +18,6 @@ namespace HttpClientChallenges
             };
         }
 
-        public async Task<ToDoItem> DeleteToDoItem(int id) { }
+        public async Task<bool> DeleteToDoItem(int id) { }
     }
 }
