@@ -4,29 +4,14 @@
     {
         static async Task Main(string[] args)
         {
-            HttpToDoUpdate todo = new HttpToDoUpdate("https://jsonplaceholder.typicode.com/");
+            HttpToDoDelete todo = new HttpToDoDelete("https://jsonplaceholder.typicode.com/");
 
-            Console.WriteLine("Enter the ID to update a ToDo Item: ");
+            Console.WriteLine("Enter the ID to delete a ToDo Item: ");
             int Id = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the updated Title: ");
-            string updatedTitle = Console.ReadLine();
+            var results = await todo.DeleteToDoItem(Id);
 
-            Console.WriteLine("Now update the status: (True/False)");
-            bool updatedStatus = bool.Parse(Console.ReadLine());
-
-            ToDoItem updatedBody = new ToDoItem() 
-            {
-                Id = Id,
-                Title = updatedTitle,
-                Completed = updatedStatus
-            };
-
-            ToDoItem? updatedTodo = await todo.UpdateToDoItem(Id, updatedBody);
-
-            Console.WriteLine($"Updated! Todo Item: {updatedTodo.Title}");
-            Console.WriteLine($"\n Updated Status: {updatedTodo.Completed}");
-            Console.WriteLine($"\n Todo Item ID: {updatedTodo.Id}");
+            Console.WriteLine($"Item is now deleted: {results}");
 
             Console.ReadLine();
         }
