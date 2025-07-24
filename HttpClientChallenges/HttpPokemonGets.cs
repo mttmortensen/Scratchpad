@@ -108,10 +108,10 @@ namespace HttpClientChallenges
 
             Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
             Console.WriteLine($"Abilities: ");
-            foreach (PokeAbilitySlots abilitySolt in pokemon.Abilities)
+            foreach (PokeAbilitySlots abilitySlot in pokemon.Abilities)
             {
-                Console.WriteLine($"Name: {abilitySolt.Ability.Name}");
-                Console.WriteLine($"More Info: {abilitySolt.Ability.URL}");
+                Console.WriteLine($"Name: {abilitySlot.Ability.Name}");
+                Console.WriteLine($"More Info: {abilitySlot.Ability.URL}");
             }
         }
     }
