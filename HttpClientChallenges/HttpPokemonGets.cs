@@ -36,5 +36,7 @@ namespace HttpClientChallenges
 
             return $"Pokemon: {name}, ID: {id}, Base Experience: {base_experience}";
         }
+
+        public async Task<string> GetDetailedPokemonInfo(string pokeName) { }
     }
 }
