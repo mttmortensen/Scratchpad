@@ -37,8 +37,8 @@ namespace HttpClientChallenges
             Pokemon poke = new Pokemon()
             {
                 Name = root.GetProperty("name").ToString(),
-                Id = root.GetProperty("id").ToString(),
-                Base_Experience = root.GetProperty("base_experience").ToString()
+                Id = root.GetProperty("id").GetInt32(),
+                Base_Experience = root.GetProperty("base_experience").GetInt32()
             };
 
             return $"Pokemon: {poke.Name}, ID: {poke.Id}, Base Experience: {poke.Base_Experience}";
@@ -64,8 +64,8 @@ namespace HttpClientChallenges
                 Pokemon poke = new Pokemon() 
                 {
                     Name = root.GetProperty("name").ToString(),
-                    Id = root.GetProperty("id").ToString(),
-                    Base_Experience = root.GetProperty("base_experience").ToString(),
+                    Id = root.GetProperty("id").GetInt32(),
+                    Base_Experience = root.GetProperty("base_experience").GetInt32(),
 
                     // Using GetInt32 because these props are ints from the API
                     Height = root.GetProperty("height").GetInt32(),
@@ -94,21 +94,24 @@ namespace HttpClientChallenges
 
             string json = await response.Content.ReadAsStringAsync();
 
-            Pokemon pokemon = JsonSerializer.Deserialize<Pokemon>(json);
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            Pokemon pokemon = JsonSerializer.Deserialize<Pokemon>(json, options);
 
             return pokemon;
+
         }
 
         // ===== HELPER =====
         public async Task DisplayPokemonAbilities(string pokeName) 
         {
             Pokemon pokemon = await GetPokemonAbilities(pokeName);
-            List<PokeAbilities> pokeAbilities = pokemon.Abilities;
+
             Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
             Console.WriteLine($"Abilities: ");
-            foreach (PokeAbilities ability in pokeAbilities ) 
+            foreach (PokeAbilitySlots abilitySolt in pokemon.Abilities)
             {
-                Console.WriteLine($"Name: {ability.Name}");
+                Console.WriteLine($"Name: {abilitySolt.Ability.Name}");
+                Console.WriteLine($"More Info: {abilitySolt.Ability.URL}");
             }
         }
     }
