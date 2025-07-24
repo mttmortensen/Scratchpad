@@ -29,14 +29,15 @@ namespace HttpClientChallenges
 
             var body = await verifyReponse.Content.ReadAsStringAsync();
 
-            if (body.Trim() == "{}") 
+            if (body.Trim() != "{}") 
             {
-                Console.WriteLine($"Delete response status: {response.StatusCode}");
-                Console.WriteLine($"Verified: Todo {id} no longer exists.\r\n");
-                return true;
+                Console.WriteLine($"Todo {id} does not exist. Please try a different ID");
+                return false;
             }
 
-            return false;
+            Console.WriteLine($"Delete response status: {response.StatusCode}");
+            Console.WriteLine($"Verified: Todo {id} no longer exists.\r\n");
+            return true;
         }
     }
 }
