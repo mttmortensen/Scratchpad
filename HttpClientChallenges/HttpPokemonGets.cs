@@ -82,9 +82,34 @@ namespace HttpClientChallenges
             };
         }
 
-        public async Task<string> GetPokemonAbilities(string pokeName) 
+        private async Task<Pokemon> GetPokemonAbilities(string pokeName) 
         {
+            var response = await _client.GetAsync($"pokemon/{pokeName}");
 
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"Error: Pokemon '{pokeName}' is not found");
+            }
+            ;
+
+            string json = await response.Content.ReadAsStringAsync();
+
+            Pokemon pokemon = JsonSerializer.Deserialize<Pokemon>(json);
+
+            return pokemon;
+        }
+
+        // ===== HELPER =====
+        public async Task DisplayPokemonAbilities(string pokeName) 
+        {
+            Pokemon pokemon = await GetPokemonAbilities(pokeName);
+            List<PokeAbilities> pokeAbilities = pokemon.Abilities;
+            Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
+            Console.WriteLine($"Abilities: ");
+            foreach (PokeAbilities ability in pokeAbilities ) 
+            {
+                Console.WriteLine($"Name: {ability.Name}");
+            }
         }
     }
 }
