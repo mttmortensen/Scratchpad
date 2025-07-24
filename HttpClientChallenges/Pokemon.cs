@@ -17,18 +17,32 @@ namespace HttpClientChallenges
         // The prop name needs to match the JSON response object
         // The type name doesn't matter
         public List<PokeAbilitySlots> Abilities { get; set; } 
+        public List<PokeMoveSlots> Moves { get; set; }
     }
 
-    // PokeAbilitySlots is a custom type name and isn't related to the PokeAPI
+    // PokeXSlots is a custom type name and isn't related to the PokeAPI
     public class PokeAbilitySlots() 
     {
         public Ability Ability { get; set; }
     };
 
-    // However Ability is in the PokeAPI and so are it's props. 
+    public class PokeMoveSlots() 
+    {
+        public Move Move { get; set; }
+    }
+
+    // However Ability and Move are in the PokeAPI and so are it's props. 
     public class Ability()
     {
         public string Name {get; set;} 
         public string URL { get; set; }
+    }
+
+    // I wonder if there's a way I could DRY this single object 
+    // for Ability and Move since they both have the same props.
+    public class Move() 
+    {
+        public string Name { get; set; }
+        public string  URL { get; set; }
     }
 }
