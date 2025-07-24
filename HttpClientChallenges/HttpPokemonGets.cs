@@ -85,7 +85,8 @@ namespace HttpClientChallenges
         }
 
         // **************** CHALLENGE 3 **************** //
-        private async Task<Pokemon> GetPokemonAbilities(string pokeName) 
+        // ===== HELPER =====
+        private async Task<Pokemon> GetFullPokemon(string pokeName) 
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
 
@@ -103,11 +104,10 @@ namespace HttpClientChallenges
             return pokemon;
 
         }
-
-        // ===== HELPER =====
+        
         public async Task DisplayPokemonAbilities(string pokeName) 
         {
-            Pokemon pokemon = await GetPokemonAbilities(pokeName);
+            Pokemon pokemon = await GetFullPokemon(pokeName);
 
             Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
             Console.WriteLine($"Abilities: ");
@@ -119,6 +119,20 @@ namespace HttpClientChallenges
         }
 
         // **************** CHALLENGE 4 **************** //
+        public async Task DisplayTop10PokemonMoves(string pokename)
+        {
+            Pokemon pokemon = await GetFullPokemon(pokename);
+
+            Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
+            Console.WriteLine($"Top 10 Moves: ");
+
+            List<PokeMoveSlots> top10 = pokemon.Moves.Take(10).ToList();
+
+            for(int i = 0; i < top10.Count; i++) 
+            {
+                Console.WriteLine($"{i + 1}. {top10[i].Move.Name}");
+            }
+        }
 
         // **************** CHALLENGE 5 **************** //
     }
