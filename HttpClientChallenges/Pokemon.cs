@@ -11,8 +11,8 @@ namespace HttpClientChallenges
         public string Id { get; set; }
         public string Name { get; set; }
         public string Base_Experience { get; set; }
-        public int height { get; set; }
-        public int weight { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
 
         public List<PokeAbilities> Abilities { get; set; } 
     }

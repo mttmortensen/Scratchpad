@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HttpClientChallenges
 {
@@ -23,7 +24,10 @@ namespace HttpClientChallenges
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
 
-            response.EnsureSuccessStatusCode();
+            if (!response.IsSuccessStatusCode) 
+            {
+                return $"Error: Pokemon '{pokeName}' is not found";
+            };
 
             string json = await response.Content.ReadAsStringAsync();
 
@@ -44,7 +48,10 @@ namespace HttpClientChallenges
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
 
-            response.EnsureSuccessStatusCode();
+            if (!response.IsSuccessStatusCode)
+            {
+                return $"Error: Pokemon '{pokeName}' is not found";
+            };
 
             string json = await response.Content.ReadAsStringAsync();
 
@@ -53,24 +60,23 @@ namespace HttpClientChallenges
             using (JsonDocument doc = JsonDocument.Parse(json))
             {
                 JsonElement root = doc.RootElement;
-                string name = root.GetProperty("name").ToString();
+
+                Pokemon poke = new Pokemon() 
+                {
+                    Name = root.GetProperty("name").ToString(),
+                    Id = root.GetProperty("id").ToString(),
+                    Base_Experience = root.GetProperty("base_experience").ToString(),
+
+                    // Using GetInt32 because these props are ints from the API
+                    Height = root.GetProperty("height").GetInt32(),
+                    Weight = root.GetProperty("weight").GetInt32()
+                };
 
                 // Capitalized word
-                name = name.First().ToString().ToUpper() + name.Substring(1);
+                poke.Name = poke.Name.First().ToString().ToUpper() + poke.Name.Substring(1);
 
-                string id = root.GetProperty("id").ToString();
-                string base_experience = root.GetProperty("base_experience").ToString();
-
-                // trying the different solution from challenge 1
-                // Using GetString() instead
-                // Why? Chat says it's cleaner for strings
-                int height = root.GetProperty("height").GetInt32();
-                int weight = root.GetProperty("weight").GetInt32();
-
-                return $"Pokemon: {name} (ID: {id})\n Base Experience: {base_experience}\n Height: {height}\n Weight: {weight}";
+                return $"Pokemon: {poke.Name} (ID: {poke.Id})\n Base Experience: {poke.Base_Experience}\n Height: {poke.Height}\n Weight: {poke.Weight}";
             };
         }
-
-        public async Task 
     }
 }
