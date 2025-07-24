@@ -27,10 +27,11 @@ namespace HttpClientChallenges
             // Verifying if the object still exists after deletion
             var verifyReponse = await _client.GetAsync($"todos/{id}");
 
-            var body = verifyReponse.Content.ReadAsStringAsync();
+            var body = await verifyReponse.Content.ReadAsStringAsync();
 
-            if (body != null) 
+            if (body.Trim() == "{}") 
             {
+                Console.WriteLine($"Delete response status: {response.StatusCode}");
                 Console.WriteLine($"Verified: Todo {id} no longer exists.\r\n");
                 return true;
             }
