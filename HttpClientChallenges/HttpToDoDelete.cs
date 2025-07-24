@@ -8,5 +8,16 @@ namespace HttpClientChallenges
 {
     public class HttpToDoDelete
     {
+        private readonly HttpClient _client; 
+
+        public HttpToDoDelete(string url)
+        {
+            _client = new HttpClient()
+            {
+                BaseAddress = new Uri(url)
+            };
+        }
+
+        public async Task<ToDoItem> DeleteToDoItem(int id) { }
     }
 }
