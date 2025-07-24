@@ -81,5 +81,10 @@ namespace HttpClientChallenges
                     $"Weight: {poke.Weight}";
             };
         }
+
+        public async Task<string> GetPokemonAbilities(string pokeName) 
+        {
+
+        }
     }
 }
