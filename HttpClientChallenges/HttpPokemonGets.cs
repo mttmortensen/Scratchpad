@@ -75,7 +75,10 @@ namespace HttpClientChallenges
                 // Capitalized word
                 poke.Name = poke.Name.First().ToString().ToUpper() + poke.Name.Substring(1);
 
-                return $"Pokemon: {poke.Name} (ID: {poke.Id})\n Base Experience: {poke.Base_Experience}\n Height: {poke.Height}\n Weight: {poke.Weight}";
+                return $"Pokemon: {poke.Name} (ID: {poke.Id})\n " +
+                    $"Base Experience: {poke.Base_Experience}\n " +
+                    $"Height: {poke.Height}\n " +
+                    $"Weight: {poke.Weight}";
             };
         }
     }
