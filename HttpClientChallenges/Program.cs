@@ -4,12 +4,12 @@
     {
         static async Task Main(string[] args)
         {
-            HttpPokemonGets poke = new HttpPokemonGets("https://pokeapi.co/api/v2/");
+            HttpPokemonGets trainer = new HttpPokemonGets("https://pokeapi.co/api/v2/");
 
             Console.WriteLine("Enter the name of a Pokemon to look up: ");
             string pokemon = Console.ReadLine();
 
-            var results = await poke.GetBasicPokemonInfo(pokemon);
+            var results = await trainer.GetBasicPokemonInfo(pokemon);
 
             Console.WriteLine($"{results}");
 
