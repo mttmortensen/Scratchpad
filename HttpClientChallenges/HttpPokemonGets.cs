@@ -19,7 +19,7 @@ namespace HttpClientChallenges
             };
         }
 
-        public async Task<string> GetPokemonInfo(string pokeName) 
+        public async Task<string> GetBasicPokemonInfo(string pokeName) 
         {
             var response = await _client.GetAsync($"pokemon/{pokeName}");
 

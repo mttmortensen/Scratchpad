@@ -9,7 +9,7 @@
             Console.WriteLine("Enter the name of a Pokemon to look up: ");
             string pokemon = Console.ReadLine();
 
-            var results = await poke.GetPokemonInfo(pokemon);
+            var results = await poke.GetBasicPokemonInfo(pokemon);
 
             Console.WriteLine($"{results}");
 
