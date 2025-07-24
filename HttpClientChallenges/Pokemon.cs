@@ -8,12 +8,27 @@ namespace HttpClientChallenges
 {
     public class Pokemon
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string Base_Experience { get; set; }
+        public int Base_Experience { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
 
-        public List<PokeAbilities> Abilities { get; set; } 
+        // The prop name needs to match the JSON response object
+        // The type name doesn't matter
+        public List<PokeAbilitySlots> Abilities { get; set; } 
+    }
+
+    // PokeAbilitySlots is a custom type name and isn't related to the PokeAPI
+    public class PokeAbilitySlots() 
+    {
+        public Ability Ability { get; set; }
+    };
+
+    // However Ability is in the PokeAPI and so are it's props. 
+    public class Ability()
+    {
+        public string Name {get; set;} 
+        public string URL { get; set; }
     }
 }
