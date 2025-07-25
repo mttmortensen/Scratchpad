@@ -6,10 +6,9 @@
         {
             HttpPokemonGets trainer = new HttpPokemonGets("https://pokeapi.co/api/v2/");
 
-            Console.WriteLine("Enter the name of a Pokemon to look up: ");
-            string pokemon = Console.ReadLine();
+            Console.WriteLine("Random Pokemon from 1-151: ");
 
-            await trainer.DisplayTop10PokemonMoves(pokemon);
+            await trainer.DisplayRandomPokemonStats();
 
             Console.ReadLine();
         }

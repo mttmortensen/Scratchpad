@@ -86,11 +86,18 @@ namespace HttpClientChallenges
 
         // **************** CHALLENGE 3 **************** //
         // ===== HELPER =====
-        private async Task<Pokemon> GetFullPokemon(string pokeName) 
+        private async Task<Pokemon> GetFullPokemon(int? id = null, string pokeName = null) 
         {
-            var response = await _client.GetAsync($"pokemon/{pokeName}");
-
-            if (!response.IsSuccessStatusCode)
+            HttpResponseMessage response;
+            if (id.HasValue)
+            {
+                response = await _client.GetAsync($"pokemon/{id}");
+            }
+            else if (!string.IsNullOrEmpty(pokeName))
+            {
+                response = await _client.GetAsync($"pokemon/{pokeName}");
+            }
+            else
             {
                 throw new Exception($"Error: Pokemon '{pokeName}' is not found");
             }
@@ -107,7 +114,7 @@ namespace HttpClientChallenges
         
         public async Task DisplayPokemonAbilities(string pokeName) 
         {
-            Pokemon pokemon = await GetFullPokemon(pokeName);
+            Pokemon pokemon = await GetFullPokemon(pokeName: pokeName);
 
             Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
             Console.WriteLine($"Abilities: ");
@@ -119,9 +126,9 @@ namespace HttpClientChallenges
         }
 
         // **************** CHALLENGE 4 **************** //
-        public async Task DisplayTop10PokemonMoves(string pokename)
+        public async Task DisplayTop10PokemonMoves(string pokeName)
         {
-            Pokemon pokemon = await GetFullPokemon(pokename);
+            Pokemon pokemon = await GetFullPokemon(pokeName: pokeName);
 
             Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
             Console.WriteLine($"Top 10 Moves: ");
@@ -135,5 +142,20 @@ namespace HttpClientChallenges
         }
 
         // **************** CHALLENGE 5 **************** //
+        public async Task DisplayRandomPokemonStats() 
+        {
+
+            Random original151 = new Random();
+
+            Pokemon pokemon = await GetFullPokemon(id: original151.Next(1, 151));
+
+            Console.WriteLine($"Pokemon: {pokemon.Name} (ID: {pokemon.Id})");
+            Console.WriteLine($"Stats: ");
+
+            foreach(PokeStatSlots statSlots in pokemon.Stats) 
+            {
+                Console.WriteLine($"{statSlots.Stat.Name}: {statSlots.Base_Stat}");
+            }
+        }
     }
 }

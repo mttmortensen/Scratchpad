@@ -18,6 +18,7 @@ namespace HttpClientChallenges
         // The type name doesn't matter
         public List<PokeAbilitySlots> Abilities { get; set; } 
         public List<PokeMoveSlots> Moves { get; set; }
+        public List<PokeStatSlots> Stats { get; set; }
     }
 
     // PokeXSlots is a custom type name and isn't related to the PokeAPI
@@ -29,6 +30,13 @@ namespace HttpClientChallenges
     public class PokeMoveSlots() 
     {
         public Move Move { get; set; }
+    }
+
+    public class PokeStatSlots() 
+    {
+        public int Base_Stat { get; set; }
+        public int Effort { get; set; }
+        public Stat Stat { get; set; }
     }
 
     // However Ability and Move are in the PokeAPI and so are it's props. 
@@ -44,5 +52,11 @@ namespace HttpClientChallenges
     {
         public string Name { get; set; }
         public string  URL { get; set; }
+    }
+
+    public class Stat 
+    {
+        public string Name { get; set; }
+        public string URL { get; set; }
     }
 }
