@@ -1,6 +1,7 @@
 ﻿using LINQChallenges.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,20 @@ namespace LINQChallenges
         public static IEnumerable<int> GettingPeoplesAge(IEnumerable<Person> people) 
         {
             return people.Select(p => p.Age);
+        }
+
+        public static IEnumerable<string> GettingAllNamesOlderThan18(IEnumerable<Person> people) 
+        {
+            return people
+                .Where(p => p.Age > 18)
+                .Select(p => p.Name);
+        }
+
+        public static IEnumerable<string> GettingAllNamesOlderThan18V2(IEnumerable<Person> people)
+        {
+            return people
+                .Where(p => p.Age > 18)
+                .Select(p => $"{p.Name} is {p.Age} years old");
         }
     }
 }
