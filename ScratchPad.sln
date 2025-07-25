@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorChallenges", "BlazorC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramChallenges", "ProgramChallenges\ProgramChallenges.csproj", "{493BB75D-DE1C-6745-4C45-D092A666009F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQChallenges", "LINQChallenges\LINQChallenges.csproj", "{1E2E1842-4B71-4758-9EF4-341D432DD0E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{493BB75D-DE1C-6745-4C45-D092A666009F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{493BB75D-DE1C-6745-4C45-D092A666009F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{493BB75D-DE1C-6745-4C45-D092A666009F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2E1842-4B71-4758-9EF4-341D432DD0E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2E1842-4B71-4758-9EF4-341D432DD0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2E1842-4B71-4758-9EF4-341D432DD0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2E1842-4B71-4758-9EF4-341D432DD0E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
