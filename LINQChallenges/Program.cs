@@ -23,11 +23,11 @@ namespace LINQChallenges
             person3.Age = 30;
             people.Add(person3);
 
-            IEnumerable<int> results = gptLINQSelect_072525.GettingPeoplesAge(people);
-            Console.WriteLine("People's ages: ");
-            foreach(int age in results) 
+            IEnumerable<string> results = gptLINQSelect_072525.GettingAllNamesOlderThan18V2(people);
+            Console.WriteLine("People older than 18: ");
+            foreach(string person in results) 
             {
-                Console.WriteLine($"{age}");
+                Console.WriteLine($"{person}");
             }
 
             Console.ReadLine();
