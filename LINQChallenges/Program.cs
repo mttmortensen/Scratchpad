@@ -23,11 +23,11 @@ namespace LINQChallenges
             person3.Age = 30;
             people.Add(person3);
 
-            IEnumerable<string> results = gptLINK7_072525.GetPeopleOver18(people);
-            Console.WriteLine("People over 18: ");
-            foreach(string person in results) 
+            IEnumerable<int> results = gptLINQSelect_072525.GettingPeoplesAge(people);
+            Console.WriteLine("People's ages: ");
+            foreach(int age in results) 
             {
-                Console.WriteLine($"{person} is over 18");
+                Console.WriteLine($"{age}");
             }
 
             Console.ReadLine();
