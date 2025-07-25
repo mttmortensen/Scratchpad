@@ -36,6 +36,11 @@ namespace LINQChallenges
         {
             return people
                 .Where(p => p.Age > 18)
+                .Select(p => new Person 
+                {
+                    Name = char.ToUpper(p.Name[0]) + p.Name.Substring(1),
+                    Age = p.Age
+                })
                 .Select(p => $"{p.Name} is {p.Age} years old");
         }
     }
