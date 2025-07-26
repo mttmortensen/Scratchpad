@@ -6,28 +6,31 @@ namespace LINQChallenges
     {
         static void Main(string[] args)
         {
-            List<Person> people = new List<Person>();
+            List<PersonV2> people = new List<PersonV2>();
 
-            Person person1 = new Person();
-            person1.Name = "matt";
+            PersonV2 person1 = new PersonV2();
+            person1.FirstName = "matt";
+            person1.LastName = "mortensen";
             person1.Age = 33;
             people.Add(person1);
 
-            Person person2 = new Person();
-            person2.Name = "sam";
+            PersonV2 person2 = new PersonV2();
+            person2.FirstName = "sam";
+            person2.LastName = "mortensen";
             person2.Age = 1;
             people.Add(person2);
 
-            Person person3 = new Person();
-            person3.Name = "ry";
+            PersonV2 person3 = new PersonV2();
+            person3.FirstName = "ry";
+            person3.LastName = "mortensen";
             person3.Age = 30;
             people.Add(person3);
 
-            IEnumerable<string> results = gptLINQSelect_072525.GettingAllNamesOlderThan18V2(people);
-            Console.WriteLine("People older than 18: ");
-            foreach(string person in results) 
+            IEnumerable<string> results = gptLINQSelectV2_072525.GetFullNames(people);
+            Console.WriteLine("Full Names: ");
+            foreach(string fullName in results) 
             {
-                Console.WriteLine($"{person}");
+                Console.WriteLine($"{fullName}");
             }
 
             Console.ReadLine();
