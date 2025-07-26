@@ -10,7 +10,11 @@ namespace Leetcode
     {
         public static void Run() 
         {
-
+            // 1. Create a Dictionary
+            // 2. Add Values
+            // 3. Update Values
+            // 4. Check if Key exists
+            // 5. Iterate over dictionary 
         }
     }
 }
