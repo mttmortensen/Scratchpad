@@ -26,11 +26,11 @@ namespace LINQChallenges
             person3.Age = 30;
             people.Add(person3);
 
-            IEnumerable<string> results = gptLINQSelectV2_072525.GetTwoOldest(people);
-            Console.WriteLine("Two Oldest: ");
-            foreach(string fullName in results) 
+            IEnumerable<string> results = gptLINQSelectV2_072525.PeopleAndTheirAges(people);
+            Console.WriteLine("People and their ages: ");
+            foreach(string person in results) 
             {
-                Console.WriteLine($"{fullName}");
+                Console.WriteLine($"{person}");
             }
 
             Console.ReadLine();

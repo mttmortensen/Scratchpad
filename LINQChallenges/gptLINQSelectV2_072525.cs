@@ -28,5 +28,19 @@ namespace LINQChallenges
                 .GroupBy(w => w[0])
                 .Select(group => $"{group.Key}: {string.Join(",", group)}");
         }
+
+        public static IEnumerable<string> PeopleAndTheirAges(IEnumerable<PersonV2> people) 
+        {
+            return people
+                .Select(p => $"{char.ToUpper(p.FirstName[0]) + p.FirstName.Substring(1)} ({p.Age})");
+        }
+
+        public static IEnumerable<string> AverageAgeByFirstLetter(IEnumerable<PersonV2> people) 
+        {
+            return people
+                .GroupBy(person => person.FirstName[0])
+                .Select(group =>$"{group.Key.ToString().ToUpper()}: {group.Average(p => p.Age).ToString()}")
+                ;
+        }
     }
 }
