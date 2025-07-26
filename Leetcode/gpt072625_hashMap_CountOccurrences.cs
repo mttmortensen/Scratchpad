@@ -23,6 +23,11 @@ namespace Leetcode
             return occurrences;
         }
 
+        // Tuple is being returned () 
+        // This is just a quick way of doing a key pair value without 
+        // having it belong to any class/obj
+        // we could totally do a Dictionary but that would return a whole 
+        // object instead of just a couple of ints
         public static (int number, int frequency) MostFrequent(List<int> nums) 
         {
             Dictionary<int, int> map = new Dictionary<int, int>();
