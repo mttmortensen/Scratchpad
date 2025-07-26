@@ -24,7 +24,8 @@ namespace LINQChallenges
 
         public static IEnumerable<string> GroupWordsByFirstLetter(IEnumerable<string> words) 
         {
-            return words.GroupBy(w => w[0])
+            return words
+                .GroupBy(w => w[0])
                 .Select(group => $"{group.Key}: {string.Join(",", group)}");
         }
     }
