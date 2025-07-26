@@ -22,5 +22,31 @@ namespace Leetcode
 
             return occurrences;
         }
+
+        public static (int number, int frequency) MostFrequent(List<int> nums) 
+        {
+            Dictionary<int, int> map = new Dictionary<int, int>();
+            int number = 0;
+            int frequency = 0;
+
+            foreach(int num in nums) 
+            {
+                if (!map.ContainsKey(num))
+                    map[num] = 1;
+                else
+                    map[num]++;
+            }
+
+            foreach(KeyValuePair<int, int> num in map) 
+            {
+                if (num.Value > frequency)
+                {
+                    number = num.Key;
+                    frequency = num.Value;
+                }
+            }
+
+            return (number, frequency);
+        }
     }
 }
